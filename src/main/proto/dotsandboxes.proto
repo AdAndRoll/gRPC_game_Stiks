@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package org.example.dotsandboxes;
+
+// Сервис для игры Dots and Boxes
+service GameService {
+  // Метод для начала игры
+  rpc startGame (StartGameRequest) returns (StartGameResponse);
+
+  // Метод для выполнения хода
+  rpc makeMove (MakeMoveRequest) returns (MakeMoveResponse);
+
+  // Метод для получения текущего игрока
+  rpc getCurrentPlayer (Empty) returns (CurrentPlayerResponse);
+
+  // Метод для получения победителя
+  rpc getWinner (Empty) returns (WinnerResponse);
+}
+
+// Сообщение для начала игры
+message StartGameRequest {
+  int32 size = 1;  // Размер поля
+}
+
+// Ответ на начало игры
+message StartGameResponse {
+  string message = 1;  // Сообщение о начале игры
+}
+
+// Запрос на выполнение хода
+message MakeMoveRequest {
+  int32 x1 = 1;
+  int32 y1 = 2;
+  int32 x2 = 3;
+  int32 y2 = 4;
+}
+
+// Ответ на ход
+message MakeMoveResponse {
+  string message = 1;  // Сообщение о выполнении хода
+}
+
+// Пустое сообщение, используется для запросов без параметров
+message Empty {}
+
+// Ответ с текущим игроком
+message CurrentPlayerResponse {
+  string player = 1;  // Имя текущего игрока
+}
+
+// Ответ с победителем
+message WinnerResponse {
+  string winner = 1;  // Имя победителя
+}
