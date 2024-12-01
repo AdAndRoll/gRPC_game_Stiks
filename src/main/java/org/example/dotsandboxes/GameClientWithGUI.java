@@ -106,8 +106,18 @@ public class GameClientWithGUI extends JPanel {
     }
 
     private boolean isValidMove(Point p1, Point p2) {
-        // Логика для проверки корректности хода (будет на сервере)
-        return true; // Пока без проверки
+        int row1 = p1.x, col1 = p1.y;
+        int row2 = p2.x, col2 = p2.y;
+
+        // Проверка горизонтальных линий
+        if (row1 == row2 && Math.abs(col1 - col2) == 1) {
+            return !horizontal[row1][Math.min(col1, col2)]; // Если линия еще не нарисована
+        }
+        // Проверка вертикальных линий
+        else if (col1 == col2 && Math.abs(row1 - row2) == 1) {
+            return !vertical[Math.min(row1, row2)][col1]; // Если линия еще не нарисована
+        }
+        return false; // Если не горизонтальная и не вертикальная линия
     }
 
     private void makeMove(Point p1, Point p2) {
@@ -150,8 +160,8 @@ public class GameClientWithGUI extends JPanel {
         g.drawString("Current turn: " + currentPlayer, 20, 20);
 
         // Рисуем сетку точек
-        for (int row = 0; row <= GRID_SIZE; row++) {
-            for (int col = 0; col <= GRID_SIZE; col++) {
+        for (int row = 0; row <= GRID_SIZE-1; row++) {
+            for (int col = 0; col <= GRID_SIZE-1; col++) {
                 g.fillOval(offset + col * cellSize - DOT_SIZE / 2, offset + row * cellSize - DOT_SIZE / 2, DOT_SIZE, DOT_SIZE);
             }
         }
