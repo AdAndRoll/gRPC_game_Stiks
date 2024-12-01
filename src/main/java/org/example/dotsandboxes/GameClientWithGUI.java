@@ -49,26 +49,33 @@ public class GameClientWithGUI extends JPanel {
 
     private void updateGameState(Dotsandboxes.GameState gameState) {
         SwingUtilities.invokeLater(() -> {
-            player1Turn = gameState.getPlayer1Turn();
-            for (Dotsandboxes.GameState.Square square : gameState.getSquaresList()) {
-                int row = square.getRow();
-                int col = square.getCol();
-                int owner = square.getOwner(); // 1 или 2, если квадрат занят
+            player1Turn = gameState.getPlayer1Turn();  // Устанавливаем ход игрока 1
 
-                squares[row][col] = owner == 1 ? 'X' : 'O'; // Обновляем символ в квадрате
+            // Обновляем состояния квадратов
+            for (Dotsandboxes.GameState.Square square : gameState.getSquaresList()) {
+                int row = square.getRow();  // Получаем строку квадрата
+                int col = square.getCol();  // Получаем колонку квадрата
+                String mark = square.getMark(); // Получаем метку (X или O)
+
+                // Обновляем символ в соответствующем квадрате
+                squares[row][col] = mark.isEmpty() ? ' ' : mark.charAt(0);  // Если метки нет, ставим пробел
             }
-            for (Dotsandboxes.Line line : gameState.getLinesList()) {
+
+            // Обновляем состояния линий
+            for (Dotsandboxes.GameState.Line line : gameState.getLinesList()) {
                 int row = line.getRow();
                 int col = line.getCol();
-                if (line.getDirection() == Dotsandboxes.Direction.HORIZONTAL) {
-                    horizontal[row][col] = true; // Обновляем горизонтальную линию
+                if (line.getDirection() == Dotsandboxes.GameState.Direction.HORIZONTAL) {
+                    horizontal[row][col] = true;  // Горизонтальная линия
                 } else {
-                    vertical[row][col] = true; // Обновляем вертикальную линию
+                    vertical[row][col] = true;  // Вертикальная линия
                 }
             }
-            repaint();
+
+            repaint();  // Перерисовываем панель
         });
     }
+
 
     private void handleMouseClick(int x, int y) {
         int panelSize = Math.min(getWidth(), getHeight());
@@ -105,12 +112,14 @@ public class GameClientWithGUI extends JPanel {
 
     private void makeMove(Point p1, Point p2) {
         try {
+            // Создаем запрос на ход
             Dotsandboxes.MakeMoveRequest moveRequest = Dotsandboxes.MakeMoveRequest.newBuilder()
                     .setX1(p1.x)
                     .setY1(p1.y)
                     .setX2(p2.x)
                     .setY2(p2.y)
                     .build();
+            // Отправляем запрос на сервер
             blockingStub.makeMove(moveRequest);
         } catch (Exception e) {
             e.printStackTrace();

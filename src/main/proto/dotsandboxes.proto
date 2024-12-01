@@ -2,53 +2,7 @@ syntax = "proto3";
 
 package org.example.dotsandboxes;
 
-// Сервис для игры Dots and Boxes
-service GameService {
-  rpc startGame (StartGameRequest) returns (StartGameResponse);
-  rpc makeMove (MakeMoveRequest) returns (MakeMoveResponse);
-  rpc getCurrentPlayer (Empty) returns (CurrentPlayerResponse);
-  rpc watchGame (Empty) returns (stream GameState); // Потоковое обновление состояния игры
-  rpc getWinner (Empty) returns (WinnerResponse);
-}
-
-// Сообщение для начала игры
-message StartGameRequest {
-  int32 size = 1;  // Размер поля
-}
-
-message StartGameResponse {
-  string message = 1;  // Сообщение о начале игры
-}
-
-// Направление линии
-enum Direction {
-  HORIZONTAL = 0; // Горизонтальная линия
-  VERTICAL = 1;   // Вертикальная линия
-}
-
-// Сообщение для линии
-message Line {
-  int32 row = 1;          // Строка, на которой расположена линия
-  int32 col = 2;          // Столбец, в котором расположена линия
-  Direction direction = 3; // Направление линии
-}
-
-// Состояние игры
-message GameState {
-  bool player1_turn = 1;
-  repeated Square squares = 2; // Список всех клеток
-  repeated Line lines = 3;     // Список всех линий (горизонтальных и вертикальных)
-  int32 grid_size = 4;         // Размер поля
-
-  // Сообщение для клетки
-  message Square {
-    int32 row = 1;
-    int32 col = 2;
-    int32 owner = 3; // 1 - Player 1, 2 - Player 2
-  }
-}
-
-// Запрос на выполнение хода
+// Объявление протокола для игры Dots and Boxes
 message MakeMoveRequest {
   int32 x1 = 1;
   int32 y1 = 2;
@@ -57,18 +11,36 @@ message MakeMoveRequest {
 }
 
 message MakeMoveResponse {
-  string message = 1;  // Сообщение о выполнении хода
+  string message = 1;
 }
 
-// Пустое сообщение
+message GameState {
+  int32 gridSize = 1;
+  bool player1Turn = 2;
+  repeated Line lines = 3;
+  repeated Square squares = 4;
+
+  message Line {
+    int32 row = 1;
+    int32 col = 2;
+    Direction direction = 3;
+  }
+
+  enum Direction {
+    HORIZONTAL = 0;
+    VERTICAL = 1;
+  }
+
+  message Square {
+    int32 row = 1;
+    int32 col = 2;
+    string mark = 3;  // Добавьте поле для метки игрока
+  }
+}
+
+service GameService {
+  rpc makeMove(MakeMoveRequest) returns (MakeMoveResponse);
+  rpc watchGame(Empty) returns (stream GameState);
+}
+
 message Empty {}
-
-// Ответ с текущим игроком
-message CurrentPlayerResponse {
-  string player = 1;  // Имя текущего игрока
-}
-
-// Ответ с победителем
-message WinnerResponse {
-  string winner = 1;  // Имя победителя
-}

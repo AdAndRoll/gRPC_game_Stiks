@@ -3,9 +3,6 @@ package org.example.dotsandboxes;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
- * <pre>
- * Сервис для игры Dots and Boxes
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.42.1)",
@@ -18,37 +15,6 @@ public final class GameServiceGrpc {
   public static final String SERVICE_NAME = "org.example.dotsandboxes.GameService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.StartGameRequest,
-      org.example.dotsandboxes.Dotsandboxes.StartGameResponse> getStartGameMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "startGame",
-      requestType = org.example.dotsandboxes.Dotsandboxes.StartGameRequest.class,
-      responseType = org.example.dotsandboxes.Dotsandboxes.StartGameResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.StartGameRequest,
-      org.example.dotsandboxes.Dotsandboxes.StartGameResponse> getStartGameMethod() {
-    io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.StartGameRequest, org.example.dotsandboxes.Dotsandboxes.StartGameResponse> getStartGameMethod;
-    if ((getStartGameMethod = GameServiceGrpc.getStartGameMethod) == null) {
-      synchronized (GameServiceGrpc.class) {
-        if ((getStartGameMethod = GameServiceGrpc.getStartGameMethod) == null) {
-          GameServiceGrpc.getStartGameMethod = getStartGameMethod =
-              io.grpc.MethodDescriptor.<org.example.dotsandboxes.Dotsandboxes.StartGameRequest, org.example.dotsandboxes.Dotsandboxes.StartGameResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "startGame"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.example.dotsandboxes.Dotsandboxes.StartGameRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.example.dotsandboxes.Dotsandboxes.StartGameResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new GameServiceMethodDescriptorSupplier("startGame"))
-              .build();
-        }
-      }
-    }
-    return getStartGameMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.MakeMoveRequest,
       org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse> getMakeMoveMethod;
 
@@ -81,37 +47,6 @@ public final class GameServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty,
-      org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse> getGetCurrentPlayerMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "getCurrentPlayer",
-      requestType = org.example.dotsandboxes.Dotsandboxes.Empty.class,
-      responseType = org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty,
-      org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse> getGetCurrentPlayerMethod() {
-    io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty, org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse> getGetCurrentPlayerMethod;
-    if ((getGetCurrentPlayerMethod = GameServiceGrpc.getGetCurrentPlayerMethod) == null) {
-      synchronized (GameServiceGrpc.class) {
-        if ((getGetCurrentPlayerMethod = GameServiceGrpc.getGetCurrentPlayerMethod) == null) {
-          GameServiceGrpc.getGetCurrentPlayerMethod = getGetCurrentPlayerMethod =
-              io.grpc.MethodDescriptor.<org.example.dotsandboxes.Dotsandboxes.Empty, org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getCurrentPlayer"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.example.dotsandboxes.Dotsandboxes.Empty.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new GameServiceMethodDescriptorSupplier("getCurrentPlayer"))
-              .build();
-        }
-      }
-    }
-    return getGetCurrentPlayerMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty,
       org.example.dotsandboxes.Dotsandboxes.GameState> getWatchGameMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
@@ -140,37 +75,6 @@ public final class GameServiceGrpc {
       }
     }
     return getWatchGameMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty,
-      org.example.dotsandboxes.Dotsandboxes.WinnerResponse> getGetWinnerMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "getWinner",
-      requestType = org.example.dotsandboxes.Dotsandboxes.Empty.class,
-      responseType = org.example.dotsandboxes.Dotsandboxes.WinnerResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty,
-      org.example.dotsandboxes.Dotsandboxes.WinnerResponse> getGetWinnerMethod() {
-    io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty, org.example.dotsandboxes.Dotsandboxes.WinnerResponse> getGetWinnerMethod;
-    if ((getGetWinnerMethod = GameServiceGrpc.getGetWinnerMethod) == null) {
-      synchronized (GameServiceGrpc.class) {
-        if ((getGetWinnerMethod = GameServiceGrpc.getGetWinnerMethod) == null) {
-          GameServiceGrpc.getGetWinnerMethod = getGetWinnerMethod =
-              io.grpc.MethodDescriptor.<org.example.dotsandboxes.Dotsandboxes.Empty, org.example.dotsandboxes.Dotsandboxes.WinnerResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getWinner"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.example.dotsandboxes.Dotsandboxes.Empty.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.example.dotsandboxes.Dotsandboxes.WinnerResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new GameServiceMethodDescriptorSupplier("getWinner"))
-              .build();
-        }
-      }
-    }
-    return getGetWinnerMethod;
   }
 
   /**
@@ -218,18 +122,8 @@ public final class GameServiceGrpc {
   }
 
   /**
-   * <pre>
-   * Сервис для игры Dots and Boxes
-   * </pre>
    */
   public static abstract class GameServiceImplBase implements io.grpc.BindableService {
-
-    /**
-     */
-    public void startGame(org.example.dotsandboxes.Dotsandboxes.StartGameRequest request,
-        io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.StartGameResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartGameMethod(), responseObserver);
-    }
 
     /**
      */
@@ -240,37 +134,13 @@ public final class GameServiceGrpc {
 
     /**
      */
-    public void getCurrentPlayer(org.example.dotsandboxes.Dotsandboxes.Empty request,
-        io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCurrentPlayerMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Потоковое обновление состояния игры
-     * </pre>
-     */
     public void watchGame(org.example.dotsandboxes.Dotsandboxes.Empty request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.GameState> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getWatchGameMethod(), responseObserver);
     }
 
-    /**
-     */
-    public void getWinner(org.example.dotsandboxes.Dotsandboxes.Empty request,
-        io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.WinnerResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWinnerMethod(), responseObserver);
-    }
-
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getStartGameMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                org.example.dotsandboxes.Dotsandboxes.StartGameRequest,
-                org.example.dotsandboxes.Dotsandboxes.StartGameResponse>(
-                  this, METHODID_START_GAME)))
           .addMethod(
             getMakeMoveMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -279,34 +149,17 @@ public final class GameServiceGrpc {
                 org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse>(
                   this, METHODID_MAKE_MOVE)))
           .addMethod(
-            getGetCurrentPlayerMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                org.example.dotsandboxes.Dotsandboxes.Empty,
-                org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse>(
-                  this, METHODID_GET_CURRENT_PLAYER)))
-          .addMethod(
             getWatchGameMethod(),
             io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 org.example.dotsandboxes.Dotsandboxes.Empty,
                 org.example.dotsandboxes.Dotsandboxes.GameState>(
                   this, METHODID_WATCH_GAME)))
-          .addMethod(
-            getGetWinnerMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                org.example.dotsandboxes.Dotsandboxes.Empty,
-                org.example.dotsandboxes.Dotsandboxes.WinnerResponse>(
-                  this, METHODID_GET_WINNER)))
           .build();
     }
   }
 
   /**
-   * <pre>
-   * Сервис для игры Dots and Boxes
-   * </pre>
    */
   public static final class GameServiceStub extends io.grpc.stub.AbstractAsyncStub<GameServiceStub> {
     private GameServiceStub(
@@ -322,14 +175,6 @@ public final class GameServiceGrpc {
 
     /**
      */
-    public void startGame(org.example.dotsandboxes.Dotsandboxes.StartGameRequest request,
-        io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.StartGameResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getStartGameMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void makeMove(org.example.dotsandboxes.Dotsandboxes.MakeMoveRequest request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -338,36 +183,14 @@ public final class GameServiceGrpc {
 
     /**
      */
-    public void getCurrentPlayer(org.example.dotsandboxes.Dotsandboxes.Empty request,
-        io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetCurrentPlayerMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Потоковое обновление состояния игры
-     * </pre>
-     */
     public void watchGame(org.example.dotsandboxes.Dotsandboxes.Empty request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.GameState> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getWatchGameMethod(), getCallOptions()), request, responseObserver);
     }
-
-    /**
-     */
-    public void getWinner(org.example.dotsandboxes.Dotsandboxes.Empty request,
-        io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.WinnerResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetWinnerMethod(), getCallOptions()), request, responseObserver);
-    }
   }
 
   /**
-   * <pre>
-   * Сервис для игры Dots and Boxes
-   * </pre>
    */
   public static final class GameServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<GameServiceBlockingStub> {
     private GameServiceBlockingStub(
@@ -383,13 +206,6 @@ public final class GameServiceGrpc {
 
     /**
      */
-    public org.example.dotsandboxes.Dotsandboxes.StartGameResponse startGame(org.example.dotsandboxes.Dotsandboxes.StartGameRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getStartGameMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse makeMove(org.example.dotsandboxes.Dotsandboxes.MakeMoveRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMakeMoveMethod(), getCallOptions(), request);
@@ -397,34 +213,14 @@ public final class GameServiceGrpc {
 
     /**
      */
-    public org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse getCurrentPlayer(org.example.dotsandboxes.Dotsandboxes.Empty request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetCurrentPlayerMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Потоковое обновление состояния игры
-     * </pre>
-     */
     public java.util.Iterator<org.example.dotsandboxes.Dotsandboxes.GameState> watchGame(
         org.example.dotsandboxes.Dotsandboxes.Empty request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getWatchGameMethod(), getCallOptions(), request);
     }
-
-    /**
-     */
-    public org.example.dotsandboxes.Dotsandboxes.WinnerResponse getWinner(org.example.dotsandboxes.Dotsandboxes.Empty request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetWinnerMethod(), getCallOptions(), request);
-    }
   }
 
   /**
-   * <pre>
-   * Сервис для игры Dots and Boxes
-   * </pre>
    */
   public static final class GameServiceFutureStub extends io.grpc.stub.AbstractFutureStub<GameServiceFutureStub> {
     private GameServiceFutureStub(
@@ -440,42 +236,15 @@ public final class GameServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.example.dotsandboxes.Dotsandboxes.StartGameResponse> startGame(
-        org.example.dotsandboxes.Dotsandboxes.StartGameRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getStartGameMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse> makeMove(
         org.example.dotsandboxes.Dotsandboxes.MakeMoveRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMakeMoveMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse> getCurrentPlayer(
-        org.example.dotsandboxes.Dotsandboxes.Empty request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetCurrentPlayerMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<org.example.dotsandboxes.Dotsandboxes.WinnerResponse> getWinner(
-        org.example.dotsandboxes.Dotsandboxes.Empty request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetWinnerMethod(), getCallOptions()), request);
-    }
   }
 
-  private static final int METHODID_START_GAME = 0;
-  private static final int METHODID_MAKE_MOVE = 1;
-  private static final int METHODID_GET_CURRENT_PLAYER = 2;
-  private static final int METHODID_WATCH_GAME = 3;
-  private static final int METHODID_GET_WINNER = 4;
+  private static final int METHODID_MAKE_MOVE = 0;
+  private static final int METHODID_WATCH_GAME = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -494,25 +263,13 @@ public final class GameServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_START_GAME:
-          serviceImpl.startGame((org.example.dotsandboxes.Dotsandboxes.StartGameRequest) request,
-              (io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.StartGameResponse>) responseObserver);
-          break;
         case METHODID_MAKE_MOVE:
           serviceImpl.makeMove((org.example.dotsandboxes.Dotsandboxes.MakeMoveRequest) request,
               (io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse>) responseObserver);
           break;
-        case METHODID_GET_CURRENT_PLAYER:
-          serviceImpl.getCurrentPlayer((org.example.dotsandboxes.Dotsandboxes.Empty) request,
-              (io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse>) responseObserver);
-          break;
         case METHODID_WATCH_GAME:
           serviceImpl.watchGame((org.example.dotsandboxes.Dotsandboxes.Empty) request,
               (io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.GameState>) responseObserver);
-          break;
-        case METHODID_GET_WINNER:
-          serviceImpl.getWinner((org.example.dotsandboxes.Dotsandboxes.Empty) request,
-              (io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.WinnerResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -575,11 +332,8 @@ public final class GameServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new GameServiceFileDescriptorSupplier())
-              .addMethod(getStartGameMethod())
               .addMethod(getMakeMoveMethod())
-              .addMethod(getGetCurrentPlayerMethod())
               .addMethod(getWatchGameMethod())
-              .addMethod(getGetWinnerMethod())
               .build();
         }
       }

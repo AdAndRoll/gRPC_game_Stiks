@@ -1,6 +1,10 @@
 package org.example.dotsandboxes;
 
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
+
+import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -12,6 +16,12 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
     // Массивы для хранения информации о нарисованных линиях
     private boolean[][] horizontal = new boolean[GRID_SIZE][GRID_SIZE - 1];  // Горизонтальные линии
     private boolean[][] vertical = new boolean[GRID_SIZE - 1][GRID_SIZE];    // Вертикальные линии
+
+    // Массив для хранения информации о заполненных квадратах
+    private boolean[][] squares = new boolean[GRID_SIZE - 1][GRID_SIZE - 1]; // Заполненные квадраты
+
+    // Массив для хранения меток игроков в квадрате (X или O)
+    private String[][] squareMarks = new String[GRID_SIZE - 1][GRID_SIZE - 1]; // Массив для хранения меток X и O
 
     // Список для хранения всех клиентов, которые слушают обновления
     private final List<StreamObserver<Dotsandboxes.GameState>> clients = new ArrayList<>();
@@ -51,8 +61,34 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
     }
 
     private boolean checkAndUpdateSquares(int row, int col, boolean isHorizontal) {
-        // Для упрощения пока не реализуем логику завершения квадрата
-        return false;
+        boolean squareCompleted = false;
+
+        // Проверка, если завершён квадрат
+        if (isHorizontal) {
+            if (row > 0 && vertical[row - 1][col] && vertical[row - 1][col + 1] && horizontal[row - 1][col]) {
+                squares[row - 1][col] = true;
+                squareMarks[row - 1][col] = player1Turn ? "X" : "O";  // Ставим метку в зависимости от текущего игрока
+                squareCompleted = true;
+            }
+            if (row < GRID_SIZE - 1 && vertical[row][col] && vertical[row][col + 1] && horizontal[row + 1][col]) {
+                squares[row][col] = true;
+                squareMarks[row][col] = player1Turn ? "X" : "O";  // Ставим метку в зависимости от текущего игрока
+                squareCompleted = true;
+            }
+        } else {
+            if (col > 0 && horizontal[row][col - 1] && horizontal[row + 1][col - 1] && vertical[row][col - 1]) {
+                squares[row][col - 1] = true;
+                squareMarks[row][col - 1] = player1Turn ? "X" : "O";  // Ставим метку в зависимости от текущего игрока
+                squareCompleted = true;
+            }
+            if (col < GRID_SIZE - 1 && horizontal[row][col] && horizontal[row + 1][col] && vertical[row][col]) {
+                squares[row][col] = true;
+                squareMarks[row][col] = player1Turn ? "X" : "O";  // Ставим метку в зависимости от текущего игрока
+                squareCompleted = true;
+            }
+        }
+
+        return squareCompleted;
     }
 
     private void togglePlayer() {
@@ -70,6 +106,7 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
                 .setGridSize(GRID_SIZE)
                 .setPlayer1Turn(player1Turn)
                 .addAllLines(getAllLines())
+                .addAllSquares(getAllSquares())
                 .build();
         responseObserver.onNext(gameState);
 
@@ -83,6 +120,7 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
                 .setGridSize(GRID_SIZE)
                 .setPlayer1Turn(player1Turn)
                 .addAllLines(getAllLines())
+                .addAllSquares(getAllSquares())
                 .build();
 
         for (StreamObserver<Dotsandboxes.GameState> client : clients) {
@@ -91,17 +129,17 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
     }
 
     // Генерация списка линий (горизонтальных и вертикальных)
-    private List<Dotsandboxes.Line> getAllLines() {
-        List<Dotsandboxes.Line> lines = new ArrayList<>();
+    private List<Dotsandboxes.GameState.Line> getAllLines() {
+        List<Dotsandboxes.GameState.Line> lines = new ArrayList<>();
 
         // Добавление горизонтальных линий
         for (int i = 0; i < GRID_SIZE; i++) {
             for (int j = 0; j < GRID_SIZE - 1; j++) {
                 if (horizontal[i][j]) {
-                    lines.add(Dotsandboxes.Line.newBuilder()
+                    lines.add(Dotsandboxes.GameState.Line.newBuilder()
                             .setRow(i)
                             .setCol(j)
-                            .setDirection(Dotsandboxes.Direction.HORIZONTAL)
+                            .setDirection(Dotsandboxes.GameState.Direction.HORIZONTAL)
                             .build());
                 }
             }
@@ -111,10 +149,10 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
         for (int i = 0; i < GRID_SIZE - 1; i++) {
             for (int j = 0; j < GRID_SIZE; j++) {
                 if (vertical[i][j]) {
-                    lines.add(Dotsandboxes.Line.newBuilder()
+                    lines.add(Dotsandboxes.GameState.Line.newBuilder()
                             .setRow(i)
                             .setCol(j)
-                            .setDirection(Dotsandboxes.Direction.VERTICAL)
+                            .setDirection(Dotsandboxes.GameState.Direction.VERTICAL)
                             .build());
                 }
             }
@@ -123,6 +161,24 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
         return lines;
     }
 
+    // Генерация списка заполненных квадратов
+    private List<Dotsandboxes.GameState.Square> getAllSquares() {
+        List<Dotsandboxes.GameState.Square> squaresList = new ArrayList<>();
+
+        for (int i = 0; i < GRID_SIZE - 1; i++) {
+            for (int j = 0; j < GRID_SIZE - 1; j++) {
+                if (squares[i][j]) {
+                    squaresList.add(Dotsandboxes.GameState.Square.newBuilder()
+                            .setRow(i)
+                            .setCol(j)
+                            .setMark(squareMarks[i][j]) // Добавляем метку
+                            .build());
+                }
+            }
+        }
+
+        return squaresList;
+    }
     public static void main(String[] args) throws InterruptedException {
         // Настроим и запустим сервер
         GameServerImpl server = new GameServerImpl();

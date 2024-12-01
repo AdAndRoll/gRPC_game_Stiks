@@ -14,4217 +14,6 @@ public final class Dotsandboxes {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * <pre>
-   * Направление линии
-   * </pre>
-   *
-   * Protobuf enum {@code org.example.dotsandboxes.Direction}
-   */
-  public enum Direction
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <pre>
-     * Горизонтальная линия
-     * </pre>
-     *
-     * <code>HORIZONTAL = 0;</code>
-     */
-    HORIZONTAL(0),
-    /**
-     * <pre>
-     * Вертикальная линия
-     * </pre>
-     *
-     * <code>VERTICAL = 1;</code>
-     */
-    VERTICAL(1),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <pre>
-     * Горизонтальная линия
-     * </pre>
-     *
-     * <code>HORIZONTAL = 0;</code>
-     */
-    public static final int HORIZONTAL_VALUE = 0;
-    /**
-     * <pre>
-     * Вертикальная линия
-     * </pre>
-     *
-     * <code>VERTICAL = 1;</code>
-     */
-    public static final int VERTICAL_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Direction valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static Direction forNumber(int value) {
-      switch (value) {
-        case 0: return HORIZONTAL;
-        case 1: return VERTICAL;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Direction>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Direction> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Direction>() {
-            public Direction findValueByNumber(int number) {
-              return Direction.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return org.example.dotsandboxes.Dotsandboxes.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Direction[] VALUES = values();
-
-    public static Direction valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Direction(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:org.example.dotsandboxes.Direction)
-  }
-
-  public interface StartGameRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.StartGameRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Размер поля
-     * </pre>
-     *
-     * <code>int32 size = 1;</code>
-     * @return The size.
-     */
-    int getSize();
-  }
-  /**
-   * <pre>
-   * Сообщение для начала игры
-   * </pre>
-   *
-   * Protobuf type {@code org.example.dotsandboxes.StartGameRequest}
-   */
-  public static final class StartGameRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.StartGameRequest)
-      StartGameRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use StartGameRequest.newBuilder() to construct.
-    private StartGameRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private StartGameRequest() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new StartGameRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private StartGameRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              size_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.example.dotsandboxes.Dotsandboxes.StartGameRequest.class, org.example.dotsandboxes.Dotsandboxes.StartGameRequest.Builder.class);
-    }
-
-    public static final int SIZE_FIELD_NUMBER = 1;
-    private int size_;
-    /**
-     * <pre>
-     * Размер поля
-     * </pre>
-     *
-     * <code>int32 size = 1;</code>
-     * @return The size.
-     */
-    @java.lang.Override
-    public int getSize() {
-      return size_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (size_ != 0) {
-        output.writeInt32(1, size_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (size_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, size_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.StartGameRequest)) {
-        return super.equals(obj);
-      }
-      org.example.dotsandboxes.Dotsandboxes.StartGameRequest other = (org.example.dotsandboxes.Dotsandboxes.StartGameRequest) obj;
-
-      if (getSize()
-          != other.getSize()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getSize();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.StartGameRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Сообщение для начала игры
-     * </pre>
-     *
-     * Protobuf type {@code org.example.dotsandboxes.StartGameRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.StartGameRequest)
-        org.example.dotsandboxes.Dotsandboxes.StartGameRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.example.dotsandboxes.Dotsandboxes.StartGameRequest.class, org.example.dotsandboxes.Dotsandboxes.StartGameRequest.Builder.class);
-      }
-
-      // Construct using org.example.dotsandboxes.Dotsandboxes.StartGameRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        size_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.StartGameRequest getDefaultInstanceForType() {
-        return org.example.dotsandboxes.Dotsandboxes.StartGameRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.StartGameRequest build() {
-        org.example.dotsandboxes.Dotsandboxes.StartGameRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.StartGameRequest buildPartial() {
-        org.example.dotsandboxes.Dotsandboxes.StartGameRequest result = new org.example.dotsandboxes.Dotsandboxes.StartGameRequest(this);
-        result.size_ = size_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.dotsandboxes.Dotsandboxes.StartGameRequest) {
-          return mergeFrom((org.example.dotsandboxes.Dotsandboxes.StartGameRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.StartGameRequest other) {
-        if (other == org.example.dotsandboxes.Dotsandboxes.StartGameRequest.getDefaultInstance()) return this;
-        if (other.getSize() != 0) {
-          setSize(other.getSize());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.example.dotsandboxes.Dotsandboxes.StartGameRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.example.dotsandboxes.Dotsandboxes.StartGameRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int size_ ;
-      /**
-       * <pre>
-       * Размер поля
-       * </pre>
-       *
-       * <code>int32 size = 1;</code>
-       * @return The size.
-       */
-      @java.lang.Override
-      public int getSize() {
-        return size_;
-      }
-      /**
-       * <pre>
-       * Размер поля
-       * </pre>
-       *
-       * <code>int32 size = 1;</code>
-       * @param value The size to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSize(int value) {
-        
-        size_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Размер поля
-       * </pre>
-       *
-       * <code>int32 size = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSize() {
-        
-        size_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.StartGameRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.StartGameRequest)
-    private static final org.example.dotsandboxes.Dotsandboxes.StartGameRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.StartGameRequest();
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<StartGameRequest>
-        PARSER = new com.google.protobuf.AbstractParser<StartGameRequest>() {
-      @java.lang.Override
-      public StartGameRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StartGameRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<StartGameRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<StartGameRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.StartGameRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface StartGameResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.StartGameResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Сообщение о начале игры
-     * </pre>
-     *
-     * <code>string message = 1;</code>
-     * @return The message.
-     */
-    java.lang.String getMessage();
-    /**
-     * <pre>
-     * Сообщение о начале игры
-     * </pre>
-     *
-     * <code>string message = 1;</code>
-     * @return The bytes for message.
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
-  }
-  /**
-   * Protobuf type {@code org.example.dotsandboxes.StartGameResponse}
-   */
-  public static final class StartGameResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.StartGameResponse)
-      StartGameResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use StartGameResponse.newBuilder() to construct.
-    private StartGameResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private StartGameResponse() {
-      message_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new StartGameResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private StartGameResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.example.dotsandboxes.Dotsandboxes.StartGameResponse.class, org.example.dotsandboxes.Dotsandboxes.StartGameResponse.Builder.class);
-    }
-
-    public static final int MESSAGE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object message_;
-    /**
-     * <pre>
-     * Сообщение о начале игры
-     * </pre>
-     *
-     * <code>string message = 1;</code>
-     * @return The message.
-     */
-    @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Сообщение о начале игры
-     * </pre>
-     *
-     * <code>string message = 1;</code>
-     * @return The bytes for message.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.StartGameResponse)) {
-        return super.equals(obj);
-      }
-      org.example.dotsandboxes.Dotsandboxes.StartGameResponse other = (org.example.dotsandboxes.Dotsandboxes.StartGameResponse) obj;
-
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.StartGameResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code org.example.dotsandboxes.StartGameResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.StartGameResponse)
-        org.example.dotsandboxes.Dotsandboxes.StartGameResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.example.dotsandboxes.Dotsandboxes.StartGameResponse.class, org.example.dotsandboxes.Dotsandboxes.StartGameResponse.Builder.class);
-      }
-
-      // Construct using org.example.dotsandboxes.Dotsandboxes.StartGameResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        message_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_StartGameResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.StartGameResponse getDefaultInstanceForType() {
-        return org.example.dotsandboxes.Dotsandboxes.StartGameResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.StartGameResponse build() {
-        org.example.dotsandboxes.Dotsandboxes.StartGameResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.StartGameResponse buildPartial() {
-        org.example.dotsandboxes.Dotsandboxes.StartGameResponse result = new org.example.dotsandboxes.Dotsandboxes.StartGameResponse(this);
-        result.message_ = message_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.dotsandboxes.Dotsandboxes.StartGameResponse) {
-          return mergeFrom((org.example.dotsandboxes.Dotsandboxes.StartGameResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.StartGameResponse other) {
-        if (other == org.example.dotsandboxes.Dotsandboxes.StartGameResponse.getDefaultInstance()) return this;
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.example.dotsandboxes.Dotsandboxes.StartGameResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.example.dotsandboxes.Dotsandboxes.StartGameResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object message_ = "";
-      /**
-       * <pre>
-       * Сообщение о начале игры
-       * </pre>
-       *
-       * <code>string message = 1;</code>
-       * @return The message.
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          message_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Сообщение о начале игры
-       * </pre>
-       *
-       * <code>string message = 1;</code>
-       * @return The bytes for message.
-       */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Сообщение о начале игры
-       * </pre>
-       *
-       * <code>string message = 1;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        message_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Сообщение о начале игры
-       * </pre>
-       *
-       * <code>string message = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMessage() {
-        
-        message_ = getDefaultInstance().getMessage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Сообщение о начале игры
-       * </pre>
-       *
-       * <code>string message = 1;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        message_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.StartGameResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.StartGameResponse)
-    private static final org.example.dotsandboxes.Dotsandboxes.StartGameResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.StartGameResponse();
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.StartGameResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<StartGameResponse>
-        PARSER = new com.google.protobuf.AbstractParser<StartGameResponse>() {
-      @java.lang.Override
-      public StartGameResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StartGameResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<StartGameResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<StartGameResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.StartGameResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface LineOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.Line)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Строка, на которой расположена линия
-     * </pre>
-     *
-     * <code>int32 row = 1;</code>
-     * @return The row.
-     */
-    int getRow();
-
-    /**
-     * <pre>
-     * Столбец, в котором расположена линия
-     * </pre>
-     *
-     * <code>int32 col = 2;</code>
-     * @return The col.
-     */
-    int getCol();
-
-    /**
-     * <pre>
-     * Направление линии
-     * </pre>
-     *
-     * <code>.org.example.dotsandboxes.Direction direction = 3;</code>
-     * @return The enum numeric value on the wire for direction.
-     */
-    int getDirectionValue();
-    /**
-     * <pre>
-     * Направление линии
-     * </pre>
-     *
-     * <code>.org.example.dotsandboxes.Direction direction = 3;</code>
-     * @return The direction.
-     */
-    org.example.dotsandboxes.Dotsandboxes.Direction getDirection();
-  }
-  /**
-   * <pre>
-   * Сообщение для линии
-   * </pre>
-   *
-   * Protobuf type {@code org.example.dotsandboxes.Line}
-   */
-  public static final class Line extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.Line)
-      LineOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Line.newBuilder() to construct.
-    private Line(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Line() {
-      direction_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Line();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Line(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              row_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              col_ = input.readInt32();
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              direction_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_Line_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_Line_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.example.dotsandboxes.Dotsandboxes.Line.class, org.example.dotsandboxes.Dotsandboxes.Line.Builder.class);
-    }
-
-    public static final int ROW_FIELD_NUMBER = 1;
-    private int row_;
-    /**
-     * <pre>
-     * Строка, на которой расположена линия
-     * </pre>
-     *
-     * <code>int32 row = 1;</code>
-     * @return The row.
-     */
-    @java.lang.Override
-    public int getRow() {
-      return row_;
-    }
-
-    public static final int COL_FIELD_NUMBER = 2;
-    private int col_;
-    /**
-     * <pre>
-     * Столбец, в котором расположена линия
-     * </pre>
-     *
-     * <code>int32 col = 2;</code>
-     * @return The col.
-     */
-    @java.lang.Override
-    public int getCol() {
-      return col_;
-    }
-
-    public static final int DIRECTION_FIELD_NUMBER = 3;
-    private int direction_;
-    /**
-     * <pre>
-     * Направление линии
-     * </pre>
-     *
-     * <code>.org.example.dotsandboxes.Direction direction = 3;</code>
-     * @return The enum numeric value on the wire for direction.
-     */
-    @java.lang.Override public int getDirectionValue() {
-      return direction_;
-    }
-    /**
-     * <pre>
-     * Направление линии
-     * </pre>
-     *
-     * <code>.org.example.dotsandboxes.Direction direction = 3;</code>
-     * @return The direction.
-     */
-    @java.lang.Override public org.example.dotsandboxes.Dotsandboxes.Direction getDirection() {
-      @SuppressWarnings("deprecation")
-      org.example.dotsandboxes.Dotsandboxes.Direction result = org.example.dotsandboxes.Dotsandboxes.Direction.valueOf(direction_);
-      return result == null ? org.example.dotsandboxes.Dotsandboxes.Direction.UNRECOGNIZED : result;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (row_ != 0) {
-        output.writeInt32(1, row_);
-      }
-      if (col_ != 0) {
-        output.writeInt32(2, col_);
-      }
-      if (direction_ != org.example.dotsandboxes.Dotsandboxes.Direction.HORIZONTAL.getNumber()) {
-        output.writeEnum(3, direction_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (row_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, row_);
-      }
-      if (col_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, col_);
-      }
-      if (direction_ != org.example.dotsandboxes.Dotsandboxes.Direction.HORIZONTAL.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, direction_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.Line)) {
-        return super.equals(obj);
-      }
-      org.example.dotsandboxes.Dotsandboxes.Line other = (org.example.dotsandboxes.Dotsandboxes.Line) obj;
-
-      if (getRow()
-          != other.getRow()) return false;
-      if (getCol()
-          != other.getCol()) return false;
-      if (direction_ != other.direction_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ROW_FIELD_NUMBER;
-      hash = (53 * hash) + getRow();
-      hash = (37 * hash) + COL_FIELD_NUMBER;
-      hash = (53 * hash) + getCol();
-      hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
-      hash = (53 * hash) + direction_;
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.Line parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.Line prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Сообщение для линии
-     * </pre>
-     *
-     * Protobuf type {@code org.example.dotsandboxes.Line}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.Line)
-        org.example.dotsandboxes.Dotsandboxes.LineOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_Line_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_Line_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.example.dotsandboxes.Dotsandboxes.Line.class, org.example.dotsandboxes.Dotsandboxes.Line.Builder.class);
-      }
-
-      // Construct using org.example.dotsandboxes.Dotsandboxes.Line.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        row_ = 0;
-
-        col_ = 0;
-
-        direction_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_Line_descriptor;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.Line getDefaultInstanceForType() {
-        return org.example.dotsandboxes.Dotsandboxes.Line.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.Line build() {
-        org.example.dotsandboxes.Dotsandboxes.Line result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.Line buildPartial() {
-        org.example.dotsandboxes.Dotsandboxes.Line result = new org.example.dotsandboxes.Dotsandboxes.Line(this);
-        result.row_ = row_;
-        result.col_ = col_;
-        result.direction_ = direction_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.dotsandboxes.Dotsandboxes.Line) {
-          return mergeFrom((org.example.dotsandboxes.Dotsandboxes.Line)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.Line other) {
-        if (other == org.example.dotsandboxes.Dotsandboxes.Line.getDefaultInstance()) return this;
-        if (other.getRow() != 0) {
-          setRow(other.getRow());
-        }
-        if (other.getCol() != 0) {
-          setCol(other.getCol());
-        }
-        if (other.direction_ != 0) {
-          setDirectionValue(other.getDirectionValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.example.dotsandboxes.Dotsandboxes.Line parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.example.dotsandboxes.Dotsandboxes.Line) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int row_ ;
-      /**
-       * <pre>
-       * Строка, на которой расположена линия
-       * </pre>
-       *
-       * <code>int32 row = 1;</code>
-       * @return The row.
-       */
-      @java.lang.Override
-      public int getRow() {
-        return row_;
-      }
-      /**
-       * <pre>
-       * Строка, на которой расположена линия
-       * </pre>
-       *
-       * <code>int32 row = 1;</code>
-       * @param value The row to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRow(int value) {
-        
-        row_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Строка, на которой расположена линия
-       * </pre>
-       *
-       * <code>int32 row = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRow() {
-        
-        row_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int col_ ;
-      /**
-       * <pre>
-       * Столбец, в котором расположена линия
-       * </pre>
-       *
-       * <code>int32 col = 2;</code>
-       * @return The col.
-       */
-      @java.lang.Override
-      public int getCol() {
-        return col_;
-      }
-      /**
-       * <pre>
-       * Столбец, в котором расположена линия
-       * </pre>
-       *
-       * <code>int32 col = 2;</code>
-       * @param value The col to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCol(int value) {
-        
-        col_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Столбец, в котором расположена линия
-       * </pre>
-       *
-       * <code>int32 col = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCol() {
-        
-        col_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int direction_ = 0;
-      /**
-       * <pre>
-       * Направление линии
-       * </pre>
-       *
-       * <code>.org.example.dotsandboxes.Direction direction = 3;</code>
-       * @return The enum numeric value on the wire for direction.
-       */
-      @java.lang.Override public int getDirectionValue() {
-        return direction_;
-      }
-      /**
-       * <pre>
-       * Направление линии
-       * </pre>
-       *
-       * <code>.org.example.dotsandboxes.Direction direction = 3;</code>
-       * @param value The enum numeric value on the wire for direction to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDirectionValue(int value) {
-        
-        direction_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Направление линии
-       * </pre>
-       *
-       * <code>.org.example.dotsandboxes.Direction direction = 3;</code>
-       * @return The direction.
-       */
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.Direction getDirection() {
-        @SuppressWarnings("deprecation")
-        org.example.dotsandboxes.Dotsandboxes.Direction result = org.example.dotsandboxes.Dotsandboxes.Direction.valueOf(direction_);
-        return result == null ? org.example.dotsandboxes.Dotsandboxes.Direction.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Направление линии
-       * </pre>
-       *
-       * <code>.org.example.dotsandboxes.Direction direction = 3;</code>
-       * @param value The direction to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDirection(org.example.dotsandboxes.Dotsandboxes.Direction value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        direction_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Направление линии
-       * </pre>
-       *
-       * <code>.org.example.dotsandboxes.Direction direction = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDirection() {
-        
-        direction_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.Line)
-    }
-
-    // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.Line)
-    private static final org.example.dotsandboxes.Dotsandboxes.Line DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.Line();
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.Line getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Line>
-        PARSER = new com.google.protobuf.AbstractParser<Line>() {
-      @java.lang.Override
-      public Line parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Line(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Line> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Line> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.Line getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface GameStateOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.GameState)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>bool player1_turn = 1;</code>
-     * @return The player1Turn.
-     */
-    boolean getPlayer1Turn();
-
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> 
-        getSquaresList();
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    org.example.dotsandboxes.Dotsandboxes.GameState.Square getSquares(int index);
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    int getSquaresCount();
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> 
-        getSquaresOrBuilderList();
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder getSquaresOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    java.util.List<org.example.dotsandboxes.Dotsandboxes.Line> 
-        getLinesList();
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    org.example.dotsandboxes.Dotsandboxes.Line getLines(int index);
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    int getLinesCount();
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.LineOrBuilder> 
-        getLinesOrBuilderList();
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    org.example.dotsandboxes.Dotsandboxes.LineOrBuilder getLinesOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * Размер поля
-     * </pre>
-     *
-     * <code>int32 grid_size = 4;</code>
-     * @return The gridSize.
-     */
-    int getGridSize();
-  }
-  /**
-   * <pre>
-   * Состояние игры
-   * </pre>
-   *
-   * Protobuf type {@code org.example.dotsandboxes.GameState}
-   */
-  public static final class GameState extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.GameState)
-      GameStateOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use GameState.newBuilder() to construct.
-    private GameState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private GameState() {
-      squares_ = java.util.Collections.emptyList();
-      lines_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GameState();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private GameState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              player1Turn_ = input.readBool();
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                squares_ = new java.util.ArrayList<org.example.dotsandboxes.Dotsandboxes.GameState.Square>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              squares_.add(
-                  input.readMessage(org.example.dotsandboxes.Dotsandboxes.GameState.Square.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                lines_ = new java.util.ArrayList<org.example.dotsandboxes.Dotsandboxes.Line>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              lines_.add(
-                  input.readMessage(org.example.dotsandboxes.Dotsandboxes.Line.parser(), extensionRegistry));
-              break;
-            }
-            case 32: {
-
-              gridSize_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          squares_ = java.util.Collections.unmodifiableList(squares_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          lines_ = java.util.Collections.unmodifiableList(lines_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.example.dotsandboxes.Dotsandboxes.GameState.class, org.example.dotsandboxes.Dotsandboxes.GameState.Builder.class);
-    }
-
-    public interface SquareOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.GameState.Square)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>int32 row = 1;</code>
-       * @return The row.
-       */
-      int getRow();
-
-      /**
-       * <code>int32 col = 2;</code>
-       * @return The col.
-       */
-      int getCol();
-
-      /**
-       * <pre>
-       * 1 - Player 1, 2 - Player 2
-       * </pre>
-       *
-       * <code>int32 owner = 3;</code>
-       * @return The owner.
-       */
-      int getOwner();
-    }
-    /**
-     * <pre>
-     * Сообщение для клетки
-     * </pre>
-     *
-     * Protobuf type {@code org.example.dotsandboxes.GameState.Square}
-     */
-    public static final class Square extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.GameState.Square)
-        SquareOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use Square.newBuilder() to construct.
-      private Square(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private Square() {
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new Square();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private Square(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-
-                row_ = input.readInt32();
-                break;
-              }
-              case 16: {
-
-                col_ = input.readInt32();
-                break;
-              }
-              case 24: {
-
-                owner_ = input.readInt32();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.example.dotsandboxes.Dotsandboxes.GameState.Square.class, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder.class);
-      }
-
-      public static final int ROW_FIELD_NUMBER = 1;
-      private int row_;
-      /**
-       * <code>int32 row = 1;</code>
-       * @return The row.
-       */
-      @java.lang.Override
-      public int getRow() {
-        return row_;
-      }
-
-      public static final int COL_FIELD_NUMBER = 2;
-      private int col_;
-      /**
-       * <code>int32 col = 2;</code>
-       * @return The col.
-       */
-      @java.lang.Override
-      public int getCol() {
-        return col_;
-      }
-
-      public static final int OWNER_FIELD_NUMBER = 3;
-      private int owner_;
-      /**
-       * <pre>
-       * 1 - Player 1, 2 - Player 2
-       * </pre>
-       *
-       * <code>int32 owner = 3;</code>
-       * @return The owner.
-       */
-      @java.lang.Override
-      public int getOwner() {
-        return owner_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (row_ != 0) {
-          output.writeInt32(1, row_);
-        }
-        if (col_ != 0) {
-          output.writeInt32(2, col_);
-        }
-        if (owner_ != 0) {
-          output.writeInt32(3, owner_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (row_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(1, row_);
-        }
-        if (col_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(2, col_);
-        }
-        if (owner_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(3, owner_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.GameState.Square)) {
-          return super.equals(obj);
-        }
-        org.example.dotsandboxes.Dotsandboxes.GameState.Square other = (org.example.dotsandboxes.Dotsandboxes.GameState.Square) obj;
-
-        if (getRow()
-            != other.getRow()) return false;
-        if (getCol()
-            != other.getCol()) return false;
-        if (getOwner()
-            != other.getOwner()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + ROW_FIELD_NUMBER;
-        hash = (53 * hash) + getRow();
-        hash = (37 * hash) + COL_FIELD_NUMBER;
-        hash = (53 * hash) + getCol();
-        hash = (37 * hash) + OWNER_FIELD_NUMBER;
-        hash = (53 * hash) + getOwner();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.GameState.Square prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * <pre>
-       * Сообщение для клетки
-       * </pre>
-       *
-       * Protobuf type {@code org.example.dotsandboxes.GameState.Square}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.GameState.Square)
-          org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  org.example.dotsandboxes.Dotsandboxes.GameState.Square.class, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder.class);
-        }
-
-        // Construct using org.example.dotsandboxes.Dotsandboxes.GameState.Square.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          row_ = 0;
-
-          col_ = 0;
-
-          owner_ = 0;
-
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_descriptor;
-        }
-
-        @java.lang.Override
-        public org.example.dotsandboxes.Dotsandboxes.GameState.Square getDefaultInstanceForType() {
-          return org.example.dotsandboxes.Dotsandboxes.GameState.Square.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public org.example.dotsandboxes.Dotsandboxes.GameState.Square build() {
-          org.example.dotsandboxes.Dotsandboxes.GameState.Square result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public org.example.dotsandboxes.Dotsandboxes.GameState.Square buildPartial() {
-          org.example.dotsandboxes.Dotsandboxes.GameState.Square result = new org.example.dotsandboxes.Dotsandboxes.GameState.Square(this);
-          result.row_ = row_;
-          result.col_ = col_;
-          result.owner_ = owner_;
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof org.example.dotsandboxes.Dotsandboxes.GameState.Square) {
-            return mergeFrom((org.example.dotsandboxes.Dotsandboxes.GameState.Square)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.GameState.Square other) {
-          if (other == org.example.dotsandboxes.Dotsandboxes.GameState.Square.getDefaultInstance()) return this;
-          if (other.getRow() != 0) {
-            setRow(other.getRow());
-          }
-          if (other.getCol() != 0) {
-            setCol(other.getCol());
-          }
-          if (other.getOwner() != 0) {
-            setOwner(other.getOwner());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          org.example.dotsandboxes.Dotsandboxes.GameState.Square parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (org.example.dotsandboxes.Dotsandboxes.GameState.Square) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private int row_ ;
-        /**
-         * <code>int32 row = 1;</code>
-         * @return The row.
-         */
-        @java.lang.Override
-        public int getRow() {
-          return row_;
-        }
-        /**
-         * <code>int32 row = 1;</code>
-         * @param value The row to set.
-         * @return This builder for chaining.
-         */
-        public Builder setRow(int value) {
-          
-          row_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>int32 row = 1;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearRow() {
-          
-          row_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private int col_ ;
-        /**
-         * <code>int32 col = 2;</code>
-         * @return The col.
-         */
-        @java.lang.Override
-        public int getCol() {
-          return col_;
-        }
-        /**
-         * <code>int32 col = 2;</code>
-         * @param value The col to set.
-         * @return This builder for chaining.
-         */
-        public Builder setCol(int value) {
-          
-          col_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>int32 col = 2;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearCol() {
-          
-          col_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private int owner_ ;
-        /**
-         * <pre>
-         * 1 - Player 1, 2 - Player 2
-         * </pre>
-         *
-         * <code>int32 owner = 3;</code>
-         * @return The owner.
-         */
-        @java.lang.Override
-        public int getOwner() {
-          return owner_;
-        }
-        /**
-         * <pre>
-         * 1 - Player 1, 2 - Player 2
-         * </pre>
-         *
-         * <code>int32 owner = 3;</code>
-         * @param value The owner to set.
-         * @return This builder for chaining.
-         */
-        public Builder setOwner(int value) {
-          
-          owner_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * 1 - Player 1, 2 - Player 2
-         * </pre>
-         *
-         * <code>int32 owner = 3;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearOwner() {
-          
-          owner_ = 0;
-          onChanged();
-          return this;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.GameState.Square)
-      }
-
-      // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.GameState.Square)
-      private static final org.example.dotsandboxes.Dotsandboxes.GameState.Square DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.GameState.Square();
-      }
-
-      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<Square>
-          PARSER = new com.google.protobuf.AbstractParser<Square>() {
-        @java.lang.Override
-        public Square parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Square(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<Square> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Square> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.GameState.Square getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public static final int PLAYER1_TURN_FIELD_NUMBER = 1;
-    private boolean player1Turn_;
-    /**
-     * <code>bool player1_turn = 1;</code>
-     * @return The player1Turn.
-     */
-    @java.lang.Override
-    public boolean getPlayer1Turn() {
-      return player1Turn_;
-    }
-
-    public static final int SQUARES_FIELD_NUMBER = 2;
-    private java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> squares_;
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> getSquaresList() {
-      return squares_;
-    }
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> 
-        getSquaresOrBuilderList() {
-      return squares_;
-    }
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    @java.lang.Override
-    public int getSquaresCount() {
-      return squares_.size();
-    }
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.GameState.Square getSquares(int index) {
-      return squares_.get(index);
-    }
-    /**
-     * <pre>
-     * Список всех клеток
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-     */
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder getSquaresOrBuilder(
-        int index) {
-      return squares_.get(index);
-    }
-
-    public static final int LINES_FIELD_NUMBER = 3;
-    private java.util.List<org.example.dotsandboxes.Dotsandboxes.Line> lines_;
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    @java.lang.Override
-    public java.util.List<org.example.dotsandboxes.Dotsandboxes.Line> getLinesList() {
-      return lines_;
-    }
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.LineOrBuilder> 
-        getLinesOrBuilderList() {
-      return lines_;
-    }
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    @java.lang.Override
-    public int getLinesCount() {
-      return lines_.size();
-    }
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.Line getLines(int index) {
-      return lines_.get(index);
-    }
-    /**
-     * <pre>
-     * Список всех линий (горизонтальных и вертикальных)
-     * </pre>
-     *
-     * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-     */
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.LineOrBuilder getLinesOrBuilder(
-        int index) {
-      return lines_.get(index);
-    }
-
-    public static final int GRID_SIZE_FIELD_NUMBER = 4;
-    private int gridSize_;
-    /**
-     * <pre>
-     * Размер поля
-     * </pre>
-     *
-     * <code>int32 grid_size = 4;</code>
-     * @return The gridSize.
-     */
-    @java.lang.Override
-    public int getGridSize() {
-      return gridSize_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (player1Turn_ != false) {
-        output.writeBool(1, player1Turn_);
-      }
-      for (int i = 0; i < squares_.size(); i++) {
-        output.writeMessage(2, squares_.get(i));
-      }
-      for (int i = 0; i < lines_.size(); i++) {
-        output.writeMessage(3, lines_.get(i));
-      }
-      if (gridSize_ != 0) {
-        output.writeInt32(4, gridSize_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (player1Turn_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, player1Turn_);
-      }
-      for (int i = 0; i < squares_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, squares_.get(i));
-      }
-      for (int i = 0; i < lines_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, lines_.get(i));
-      }
-      if (gridSize_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, gridSize_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.GameState)) {
-        return super.equals(obj);
-      }
-      org.example.dotsandboxes.Dotsandboxes.GameState other = (org.example.dotsandboxes.Dotsandboxes.GameState) obj;
-
-      if (getPlayer1Turn()
-          != other.getPlayer1Turn()) return false;
-      if (!getSquaresList()
-          .equals(other.getSquaresList())) return false;
-      if (!getLinesList()
-          .equals(other.getLinesList())) return false;
-      if (getGridSize()
-          != other.getGridSize()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PLAYER1_TURN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPlayer1Turn());
-      if (getSquaresCount() > 0) {
-        hash = (37 * hash) + SQUARES_FIELD_NUMBER;
-        hash = (53 * hash) + getSquaresList().hashCode();
-      }
-      if (getLinesCount() > 0) {
-        hash = (37 * hash) + LINES_FIELD_NUMBER;
-        hash = (53 * hash) + getLinesList().hashCode();
-      }
-      hash = (37 * hash) + GRID_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getGridSize();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.GameState prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Состояние игры
-     * </pre>
-     *
-     * Protobuf type {@code org.example.dotsandboxes.GameState}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.GameState)
-        org.example.dotsandboxes.Dotsandboxes.GameStateOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.example.dotsandboxes.Dotsandboxes.GameState.class, org.example.dotsandboxes.Dotsandboxes.GameState.Builder.class);
-      }
-
-      // Construct using org.example.dotsandboxes.Dotsandboxes.GameState.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSquaresFieldBuilder();
-          getLinesFieldBuilder();
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        player1Turn_ = false;
-
-        if (squaresBuilder_ == null) {
-          squares_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          squaresBuilder_.clear();
-        }
-        if (linesBuilder_ == null) {
-          lines_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          linesBuilder_.clear();
-        }
-        gridSize_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_descriptor;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.GameState getDefaultInstanceForType() {
-        return org.example.dotsandboxes.Dotsandboxes.GameState.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.GameState build() {
-        org.example.dotsandboxes.Dotsandboxes.GameState result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.GameState buildPartial() {
-        org.example.dotsandboxes.Dotsandboxes.GameState result = new org.example.dotsandboxes.Dotsandboxes.GameState(this);
-        int from_bitField0_ = bitField0_;
-        result.player1Turn_ = player1Turn_;
-        if (squaresBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            squares_ = java.util.Collections.unmodifiableList(squares_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.squares_ = squares_;
-        } else {
-          result.squares_ = squaresBuilder_.build();
-        }
-        if (linesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            lines_ = java.util.Collections.unmodifiableList(lines_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.lines_ = lines_;
-        } else {
-          result.lines_ = linesBuilder_.build();
-        }
-        result.gridSize_ = gridSize_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.dotsandboxes.Dotsandboxes.GameState) {
-          return mergeFrom((org.example.dotsandboxes.Dotsandboxes.GameState)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.GameState other) {
-        if (other == org.example.dotsandboxes.Dotsandboxes.GameState.getDefaultInstance()) return this;
-        if (other.getPlayer1Turn() != false) {
-          setPlayer1Turn(other.getPlayer1Turn());
-        }
-        if (squaresBuilder_ == null) {
-          if (!other.squares_.isEmpty()) {
-            if (squares_.isEmpty()) {
-              squares_ = other.squares_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureSquaresIsMutable();
-              squares_.addAll(other.squares_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.squares_.isEmpty()) {
-            if (squaresBuilder_.isEmpty()) {
-              squaresBuilder_.dispose();
-              squaresBuilder_ = null;
-              squares_ = other.squares_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              squaresBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSquaresFieldBuilder() : null;
-            } else {
-              squaresBuilder_.addAllMessages(other.squares_);
-            }
-          }
-        }
-        if (linesBuilder_ == null) {
-          if (!other.lines_.isEmpty()) {
-            if (lines_.isEmpty()) {
-              lines_ = other.lines_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureLinesIsMutable();
-              lines_.addAll(other.lines_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.lines_.isEmpty()) {
-            if (linesBuilder_.isEmpty()) {
-              linesBuilder_.dispose();
-              linesBuilder_ = null;
-              lines_ = other.lines_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              linesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getLinesFieldBuilder() : null;
-            } else {
-              linesBuilder_.addAllMessages(other.lines_);
-            }
-          }
-        }
-        if (other.getGridSize() != 0) {
-          setGridSize(other.getGridSize());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.example.dotsandboxes.Dotsandboxes.GameState parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.example.dotsandboxes.Dotsandboxes.GameState) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private boolean player1Turn_ ;
-      /**
-       * <code>bool player1_turn = 1;</code>
-       * @return The player1Turn.
-       */
-      @java.lang.Override
-      public boolean getPlayer1Turn() {
-        return player1Turn_;
-      }
-      /**
-       * <code>bool player1_turn = 1;</code>
-       * @param value The player1Turn to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayer1Turn(boolean value) {
-        
-        player1Turn_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool player1_turn = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayer1Turn() {
-        
-        player1Turn_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> squares_ =
-        java.util.Collections.emptyList();
-      private void ensureSquaresIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          squares_ = new java.util.ArrayList<org.example.dotsandboxes.Dotsandboxes.GameState.Square>(squares_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.example.dotsandboxes.Dotsandboxes.GameState.Square, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder, org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> squaresBuilder_;
-
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> getSquaresList() {
-        if (squaresBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(squares_);
-        } else {
-          return squaresBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public int getSquaresCount() {
-        if (squaresBuilder_ == null) {
-          return squares_.size();
-        } else {
-          return squaresBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.GameState.Square getSquares(int index) {
-        if (squaresBuilder_ == null) {
-          return squares_.get(index);
-        } else {
-          return squaresBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public Builder setSquares(
-          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Square value) {
-        if (squaresBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSquaresIsMutable();
-          squares_.set(index, value);
-          onChanged();
-        } else {
-          squaresBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public Builder setSquares(
-          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder builderForValue) {
-        if (squaresBuilder_ == null) {
-          ensureSquaresIsMutable();
-          squares_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          squaresBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public Builder addSquares(org.example.dotsandboxes.Dotsandboxes.GameState.Square value) {
-        if (squaresBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSquaresIsMutable();
-          squares_.add(value);
-          onChanged();
-        } else {
-          squaresBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public Builder addSquares(
-          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Square value) {
-        if (squaresBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSquaresIsMutable();
-          squares_.add(index, value);
-          onChanged();
-        } else {
-          squaresBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public Builder addSquares(
-          org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder builderForValue) {
-        if (squaresBuilder_ == null) {
-          ensureSquaresIsMutable();
-          squares_.add(builderForValue.build());
-          onChanged();
-        } else {
-          squaresBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public Builder addSquares(
-          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder builderForValue) {
-        if (squaresBuilder_ == null) {
-          ensureSquaresIsMutable();
-          squares_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          squaresBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public Builder addAllSquares(
-          java.lang.Iterable<? extends org.example.dotsandboxes.Dotsandboxes.GameState.Square> values) {
-        if (squaresBuilder_ == null) {
-          ensureSquaresIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, squares_);
-          onChanged();
-        } else {
-          squaresBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public Builder clearSquares() {
-        if (squaresBuilder_ == null) {
-          squares_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          squaresBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public Builder removeSquares(int index) {
-        if (squaresBuilder_ == null) {
-          ensureSquaresIsMutable();
-          squares_.remove(index);
-          onChanged();
-        } else {
-          squaresBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder getSquaresBuilder(
-          int index) {
-        return getSquaresFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder getSquaresOrBuilder(
-          int index) {
-        if (squaresBuilder_ == null) {
-          return squares_.get(index);  } else {
-          return squaresBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> 
-           getSquaresOrBuilderList() {
-        if (squaresBuilder_ != null) {
-          return squaresBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(squares_);
-        }
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder addSquaresBuilder() {
-        return getSquaresFieldBuilder().addBuilder(
-            org.example.dotsandboxes.Dotsandboxes.GameState.Square.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder addSquaresBuilder(
-          int index) {
-        return getSquaresFieldBuilder().addBuilder(
-            index, org.example.dotsandboxes.Dotsandboxes.GameState.Square.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Список всех клеток
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 2;</code>
-       */
-      public java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder> 
-           getSquaresBuilderList() {
-        return getSquaresFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.example.dotsandboxes.Dotsandboxes.GameState.Square, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder, org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> 
-          getSquaresFieldBuilder() {
-        if (squaresBuilder_ == null) {
-          squaresBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.example.dotsandboxes.Dotsandboxes.GameState.Square, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder, org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder>(
-                  squares_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          squares_ = null;
-        }
-        return squaresBuilder_;
-      }
-
-      private java.util.List<org.example.dotsandboxes.Dotsandboxes.Line> lines_ =
-        java.util.Collections.emptyList();
-      private void ensureLinesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          lines_ = new java.util.ArrayList<org.example.dotsandboxes.Dotsandboxes.Line>(lines_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.example.dotsandboxes.Dotsandboxes.Line, org.example.dotsandboxes.Dotsandboxes.Line.Builder, org.example.dotsandboxes.Dotsandboxes.LineOrBuilder> linesBuilder_;
-
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public java.util.List<org.example.dotsandboxes.Dotsandboxes.Line> getLinesList() {
-        if (linesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(lines_);
-        } else {
-          return linesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public int getLinesCount() {
-        if (linesBuilder_ == null) {
-          return lines_.size();
-        } else {
-          return linesBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.Line getLines(int index) {
-        if (linesBuilder_ == null) {
-          return lines_.get(index);
-        } else {
-          return linesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public Builder setLines(
-          int index, org.example.dotsandboxes.Dotsandboxes.Line value) {
-        if (linesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLinesIsMutable();
-          lines_.set(index, value);
-          onChanged();
-        } else {
-          linesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public Builder setLines(
-          int index, org.example.dotsandboxes.Dotsandboxes.Line.Builder builderForValue) {
-        if (linesBuilder_ == null) {
-          ensureLinesIsMutable();
-          lines_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          linesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public Builder addLines(org.example.dotsandboxes.Dotsandboxes.Line value) {
-        if (linesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLinesIsMutable();
-          lines_.add(value);
-          onChanged();
-        } else {
-          linesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public Builder addLines(
-          int index, org.example.dotsandboxes.Dotsandboxes.Line value) {
-        if (linesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLinesIsMutable();
-          lines_.add(index, value);
-          onChanged();
-        } else {
-          linesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public Builder addLines(
-          org.example.dotsandboxes.Dotsandboxes.Line.Builder builderForValue) {
-        if (linesBuilder_ == null) {
-          ensureLinesIsMutable();
-          lines_.add(builderForValue.build());
-          onChanged();
-        } else {
-          linesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public Builder addLines(
-          int index, org.example.dotsandboxes.Dotsandboxes.Line.Builder builderForValue) {
-        if (linesBuilder_ == null) {
-          ensureLinesIsMutable();
-          lines_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          linesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public Builder addAllLines(
-          java.lang.Iterable<? extends org.example.dotsandboxes.Dotsandboxes.Line> values) {
-        if (linesBuilder_ == null) {
-          ensureLinesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, lines_);
-          onChanged();
-        } else {
-          linesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public Builder clearLines() {
-        if (linesBuilder_ == null) {
-          lines_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          linesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public Builder removeLines(int index) {
-        if (linesBuilder_ == null) {
-          ensureLinesIsMutable();
-          lines_.remove(index);
-          onChanged();
-        } else {
-          linesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.Line.Builder getLinesBuilder(
-          int index) {
-        return getLinesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.LineOrBuilder getLinesOrBuilder(
-          int index) {
-        if (linesBuilder_ == null) {
-          return lines_.get(index);  } else {
-          return linesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.LineOrBuilder> 
-           getLinesOrBuilderList() {
-        if (linesBuilder_ != null) {
-          return linesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(lines_);
-        }
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.Line.Builder addLinesBuilder() {
-        return getLinesFieldBuilder().addBuilder(
-            org.example.dotsandboxes.Dotsandboxes.Line.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public org.example.dotsandboxes.Dotsandboxes.Line.Builder addLinesBuilder(
-          int index) {
-        return getLinesFieldBuilder().addBuilder(
-            index, org.example.dotsandboxes.Dotsandboxes.Line.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Список всех линий (горизонтальных и вертикальных)
-       * </pre>
-       *
-       * <code>repeated .org.example.dotsandboxes.Line lines = 3;</code>
-       */
-      public java.util.List<org.example.dotsandboxes.Dotsandboxes.Line.Builder> 
-           getLinesBuilderList() {
-        return getLinesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.example.dotsandboxes.Dotsandboxes.Line, org.example.dotsandboxes.Dotsandboxes.Line.Builder, org.example.dotsandboxes.Dotsandboxes.LineOrBuilder> 
-          getLinesFieldBuilder() {
-        if (linesBuilder_ == null) {
-          linesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.example.dotsandboxes.Dotsandboxes.Line, org.example.dotsandboxes.Dotsandboxes.Line.Builder, org.example.dotsandboxes.Dotsandboxes.LineOrBuilder>(
-                  lines_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          lines_ = null;
-        }
-        return linesBuilder_;
-      }
-
-      private int gridSize_ ;
-      /**
-       * <pre>
-       * Размер поля
-       * </pre>
-       *
-       * <code>int32 grid_size = 4;</code>
-       * @return The gridSize.
-       */
-      @java.lang.Override
-      public int getGridSize() {
-        return gridSize_;
-      }
-      /**
-       * <pre>
-       * Размер поля
-       * </pre>
-       *
-       * <code>int32 grid_size = 4;</code>
-       * @param value The gridSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGridSize(int value) {
-        
-        gridSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Размер поля
-       * </pre>
-       *
-       * <code>int32 grid_size = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGridSize() {
-        
-        gridSize_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.GameState)
-    }
-
-    // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.GameState)
-    private static final org.example.dotsandboxes.Dotsandboxes.GameState DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.GameState();
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.GameState getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<GameState>
-        PARSER = new com.google.protobuf.AbstractParser<GameState>() {
-      @java.lang.Override
-      public GameState parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GameState(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<GameState> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GameState> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.GameState getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface MakeMoveRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.MakeMoveRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -4255,7 +44,7 @@ public final class Dotsandboxes {
   }
   /**
    * <pre>
-   * Запрос на выполнение хода
+   * Объявление протокола для игры Dots and Boxes
    * </pre>
    *
    * Protobuf type {@code org.example.dotsandboxes.MakeMoveRequest}
@@ -4588,7 +377,7 @@ public final class Dotsandboxes {
     }
     /**
      * <pre>
-     * Запрос на выполнение хода
+     * Объявление протокола для игры Dots and Boxes
      * </pre>
      *
      * Protobuf type {@code org.example.dotsandboxes.MakeMoveRequest}
@@ -4936,19 +725,11 @@ public final class Dotsandboxes {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * Сообщение о выполнении хода
-     * </pre>
-     *
      * <code>string message = 1;</code>
      * @return The message.
      */
     java.lang.String getMessage();
     /**
-     * <pre>
-     * Сообщение о выполнении хода
-     * </pre>
-     *
      * <code>string message = 1;</code>
      * @return The bytes for message.
      */
@@ -5042,10 +823,6 @@ public final class Dotsandboxes {
     public static final int MESSAGE_FIELD_NUMBER = 1;
     private volatile java.lang.Object message_;
     /**
-     * <pre>
-     * Сообщение о выполнении хода
-     * </pre>
-     *
      * <code>string message = 1;</code>
      * @return The message.
      */
@@ -5063,10 +840,6 @@ public final class Dotsandboxes {
       }
     }
     /**
-     * <pre>
-     * Сообщение о выполнении хода
-     * </pre>
-     *
      * <code>string message = 1;</code>
      * @return The bytes for message.
      */
@@ -5389,10 +1162,6 @@ public final class Dotsandboxes {
 
       private java.lang.Object message_ = "";
       /**
-       * <pre>
-       * Сообщение о выполнении хода
-       * </pre>
-       *
        * <code>string message = 1;</code>
        * @return The message.
        */
@@ -5409,10 +1178,6 @@ public final class Dotsandboxes {
         }
       }
       /**
-       * <pre>
-       * Сообщение о выполнении хода
-       * </pre>
-       *
        * <code>string message = 1;</code>
        * @return The bytes for message.
        */
@@ -5430,10 +1195,6 @@ public final class Dotsandboxes {
         }
       }
       /**
-       * <pre>
-       * Сообщение о выполнении хода
-       * </pre>
-       *
        * <code>string message = 1;</code>
        * @param value The message to set.
        * @return This builder for chaining.
@@ -5449,10 +1210,6 @@ public final class Dotsandboxes {
         return this;
       }
       /**
-       * <pre>
-       * Сообщение о выполнении хода
-       * </pre>
-       *
        * <code>string message = 1;</code>
        * @return This builder for chaining.
        */
@@ -5463,10 +1220,6 @@ public final class Dotsandboxes {
         return this;
       }
       /**
-       * <pre>
-       * Сообщение о выполнении хода
-       * </pre>
-       *
        * <code>string message = 1;</code>
        * @param value The bytes for message to set.
        * @return This builder for chaining.
@@ -5535,15 +1288,2834 @@ public final class Dotsandboxes {
 
   }
 
+  public interface GameStateOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.GameState)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 gridSize = 1;</code>
+     * @return The gridSize.
+     */
+    int getGridSize();
+
+    /**
+     * <code>bool player1Turn = 2;</code>
+     * @return The player1Turn.
+     */
+    boolean getPlayer1Turn();
+
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Line> 
+        getLinesList();
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    org.example.dotsandboxes.Dotsandboxes.GameState.Line getLines(int index);
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    int getLinesCount();
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder> 
+        getLinesOrBuilderList();
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder getLinesOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> 
+        getSquaresList();
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    org.example.dotsandboxes.Dotsandboxes.GameState.Square getSquares(int index);
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    int getSquaresCount();
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> 
+        getSquaresOrBuilderList();
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder getSquaresOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code org.example.dotsandboxes.GameState}
+   */
+  public static final class GameState extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.GameState)
+      GameStateOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GameState.newBuilder() to construct.
+    private GameState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GameState() {
+      lines_ = java.util.Collections.emptyList();
+      squares_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GameState();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GameState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              gridSize_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              player1Turn_ = input.readBool();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                lines_ = new java.util.ArrayList<org.example.dotsandboxes.Dotsandboxes.GameState.Line>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              lines_.add(
+                  input.readMessage(org.example.dotsandboxes.Dotsandboxes.GameState.Line.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                squares_ = new java.util.ArrayList<org.example.dotsandboxes.Dotsandboxes.GameState.Square>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              squares_.add(
+                  input.readMessage(org.example.dotsandboxes.Dotsandboxes.GameState.Square.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          lines_ = java.util.Collections.unmodifiableList(lines_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          squares_ = java.util.Collections.unmodifiableList(squares_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.example.dotsandboxes.Dotsandboxes.GameState.class, org.example.dotsandboxes.Dotsandboxes.GameState.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code org.example.dotsandboxes.GameState.Direction}
+     */
+    public enum Direction
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>HORIZONTAL = 0;</code>
+       */
+      HORIZONTAL(0),
+      /**
+       * <code>VERTICAL = 1;</code>
+       */
+      VERTICAL(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>HORIZONTAL = 0;</code>
+       */
+      public static final int HORIZONTAL_VALUE = 0;
+      /**
+       * <code>VERTICAL = 1;</code>
+       */
+      public static final int VERTICAL_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Direction valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Direction forNumber(int value) {
+        switch (value) {
+          case 0: return HORIZONTAL;
+          case 1: return VERTICAL;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Direction>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Direction> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Direction>() {
+              public Direction findValueByNumber(int number) {
+                return Direction.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return org.example.dotsandboxes.Dotsandboxes.GameState.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Direction[] VALUES = values();
+
+      public static Direction valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Direction(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:org.example.dotsandboxes.GameState.Direction)
+    }
+
+    public interface LineOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.GameState.Line)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>int32 row = 1;</code>
+       * @return The row.
+       */
+      int getRow();
+
+      /**
+       * <code>int32 col = 2;</code>
+       * @return The col.
+       */
+      int getCol();
+
+      /**
+       * <code>.org.example.dotsandboxes.GameState.Direction direction = 3;</code>
+       * @return The enum numeric value on the wire for direction.
+       */
+      int getDirectionValue();
+      /**
+       * <code>.org.example.dotsandboxes.GameState.Direction direction = 3;</code>
+       * @return The direction.
+       */
+      org.example.dotsandboxes.Dotsandboxes.GameState.Direction getDirection();
+    }
+    /**
+     * Protobuf type {@code org.example.dotsandboxes.GameState.Line}
+     */
+    public static final class Line extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.GameState.Line)
+        LineOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Line.newBuilder() to construct.
+      private Line(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Line() {
+        direction_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Line();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Line(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                row_ = input.readInt32();
+                break;
+              }
+              case 16: {
+
+                col_ = input.readInt32();
+                break;
+              }
+              case 24: {
+                int rawValue = input.readEnum();
+
+                direction_ = rawValue;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Line_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Line_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.example.dotsandboxes.Dotsandboxes.GameState.Line.class, org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder.class);
+      }
+
+      public static final int ROW_FIELD_NUMBER = 1;
+      private int row_;
+      /**
+       * <code>int32 row = 1;</code>
+       * @return The row.
+       */
+      @java.lang.Override
+      public int getRow() {
+        return row_;
+      }
+
+      public static final int COL_FIELD_NUMBER = 2;
+      private int col_;
+      /**
+       * <code>int32 col = 2;</code>
+       * @return The col.
+       */
+      @java.lang.Override
+      public int getCol() {
+        return col_;
+      }
+
+      public static final int DIRECTION_FIELD_NUMBER = 3;
+      private int direction_;
+      /**
+       * <code>.org.example.dotsandboxes.GameState.Direction direction = 3;</code>
+       * @return The enum numeric value on the wire for direction.
+       */
+      @java.lang.Override public int getDirectionValue() {
+        return direction_;
+      }
+      /**
+       * <code>.org.example.dotsandboxes.GameState.Direction direction = 3;</code>
+       * @return The direction.
+       */
+      @java.lang.Override public org.example.dotsandboxes.Dotsandboxes.GameState.Direction getDirection() {
+        @SuppressWarnings("deprecation")
+        org.example.dotsandboxes.Dotsandboxes.GameState.Direction result = org.example.dotsandboxes.Dotsandboxes.GameState.Direction.valueOf(direction_);
+        return result == null ? org.example.dotsandboxes.Dotsandboxes.GameState.Direction.UNRECOGNIZED : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (row_ != 0) {
+          output.writeInt32(1, row_);
+        }
+        if (col_ != 0) {
+          output.writeInt32(2, col_);
+        }
+        if (direction_ != org.example.dotsandboxes.Dotsandboxes.GameState.Direction.HORIZONTAL.getNumber()) {
+          output.writeEnum(3, direction_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (row_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, row_);
+        }
+        if (col_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(2, col_);
+        }
+        if (direction_ != org.example.dotsandboxes.Dotsandboxes.GameState.Direction.HORIZONTAL.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(3, direction_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.GameState.Line)) {
+          return super.equals(obj);
+        }
+        org.example.dotsandboxes.Dotsandboxes.GameState.Line other = (org.example.dotsandboxes.Dotsandboxes.GameState.Line) obj;
+
+        if (getRow()
+            != other.getRow()) return false;
+        if (getCol()
+            != other.getCol()) return false;
+        if (direction_ != other.direction_) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ROW_FIELD_NUMBER;
+        hash = (53 * hash) + getRow();
+        hash = (37 * hash) + COL_FIELD_NUMBER;
+        hash = (53 * hash) + getCol();
+        hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
+        hash = (53 * hash) + direction_;
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.GameState.Line prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code org.example.dotsandboxes.GameState.Line}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.GameState.Line)
+          org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Line_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Line_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.example.dotsandboxes.Dotsandboxes.GameState.Line.class, org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder.class);
+        }
+
+        // Construct using org.example.dotsandboxes.Dotsandboxes.GameState.Line.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          row_ = 0;
+
+          col_ = 0;
+
+          direction_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Line_descriptor;
+        }
+
+        @java.lang.Override
+        public org.example.dotsandboxes.Dotsandboxes.GameState.Line getDefaultInstanceForType() {
+          return org.example.dotsandboxes.Dotsandboxes.GameState.Line.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public org.example.dotsandboxes.Dotsandboxes.GameState.Line build() {
+          org.example.dotsandboxes.Dotsandboxes.GameState.Line result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public org.example.dotsandboxes.Dotsandboxes.GameState.Line buildPartial() {
+          org.example.dotsandboxes.Dotsandboxes.GameState.Line result = new org.example.dotsandboxes.Dotsandboxes.GameState.Line(this);
+          result.row_ = row_;
+          result.col_ = col_;
+          result.direction_ = direction_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.example.dotsandboxes.Dotsandboxes.GameState.Line) {
+            return mergeFrom((org.example.dotsandboxes.Dotsandboxes.GameState.Line)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.GameState.Line other) {
+          if (other == org.example.dotsandboxes.Dotsandboxes.GameState.Line.getDefaultInstance()) return this;
+          if (other.getRow() != 0) {
+            setRow(other.getRow());
+          }
+          if (other.getCol() != 0) {
+            setCol(other.getCol());
+          }
+          if (other.direction_ != 0) {
+            setDirectionValue(other.getDirectionValue());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.example.dotsandboxes.Dotsandboxes.GameState.Line parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.example.dotsandboxes.Dotsandboxes.GameState.Line) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int row_ ;
+        /**
+         * <code>int32 row = 1;</code>
+         * @return The row.
+         */
+        @java.lang.Override
+        public int getRow() {
+          return row_;
+        }
+        /**
+         * <code>int32 row = 1;</code>
+         * @param value The row to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRow(int value) {
+          
+          row_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int32 row = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRow() {
+          
+          row_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int col_ ;
+        /**
+         * <code>int32 col = 2;</code>
+         * @return The col.
+         */
+        @java.lang.Override
+        public int getCol() {
+          return col_;
+        }
+        /**
+         * <code>int32 col = 2;</code>
+         * @param value The col to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCol(int value) {
+          
+          col_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int32 col = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearCol() {
+          
+          col_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int direction_ = 0;
+        /**
+         * <code>.org.example.dotsandboxes.GameState.Direction direction = 3;</code>
+         * @return The enum numeric value on the wire for direction.
+         */
+        @java.lang.Override public int getDirectionValue() {
+          return direction_;
+        }
+        /**
+         * <code>.org.example.dotsandboxes.GameState.Direction direction = 3;</code>
+         * @param value The enum numeric value on the wire for direction to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDirectionValue(int value) {
+          
+          direction_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.org.example.dotsandboxes.GameState.Direction direction = 3;</code>
+         * @return The direction.
+         */
+        @java.lang.Override
+        public org.example.dotsandboxes.Dotsandboxes.GameState.Direction getDirection() {
+          @SuppressWarnings("deprecation")
+          org.example.dotsandboxes.Dotsandboxes.GameState.Direction result = org.example.dotsandboxes.Dotsandboxes.GameState.Direction.valueOf(direction_);
+          return result == null ? org.example.dotsandboxes.Dotsandboxes.GameState.Direction.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>.org.example.dotsandboxes.GameState.Direction direction = 3;</code>
+         * @param value The direction to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDirection(org.example.dotsandboxes.Dotsandboxes.GameState.Direction value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          direction_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.org.example.dotsandboxes.GameState.Direction direction = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearDirection() {
+          
+          direction_ = 0;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.GameState.Line)
+      }
+
+      // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.GameState.Line)
+      private static final org.example.dotsandboxes.Dotsandboxes.GameState.Line DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.GameState.Line();
+      }
+
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Line getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Line>
+          PARSER = new com.google.protobuf.AbstractParser<Line>() {
+        @java.lang.Override
+        public Line parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Line(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Line> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Line> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Line getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface SquareOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.GameState.Square)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>int32 row = 1;</code>
+       * @return The row.
+       */
+      int getRow();
+
+      /**
+       * <code>int32 col = 2;</code>
+       * @return The col.
+       */
+      int getCol();
+
+      /**
+       * <pre>
+       * Добавьте поле для метки игрока
+       * </pre>
+       *
+       * <code>string mark = 3;</code>
+       * @return The mark.
+       */
+      java.lang.String getMark();
+      /**
+       * <pre>
+       * Добавьте поле для метки игрока
+       * </pre>
+       *
+       * <code>string mark = 3;</code>
+       * @return The bytes for mark.
+       */
+      com.google.protobuf.ByteString
+          getMarkBytes();
+    }
+    /**
+     * Protobuf type {@code org.example.dotsandboxes.GameState.Square}
+     */
+    public static final class Square extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.GameState.Square)
+        SquareOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Square.newBuilder() to construct.
+      private Square(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Square() {
+        mark_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Square();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Square(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                row_ = input.readInt32();
+                break;
+              }
+              case 16: {
+
+                col_ = input.readInt32();
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                mark_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.example.dotsandboxes.Dotsandboxes.GameState.Square.class, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder.class);
+      }
+
+      public static final int ROW_FIELD_NUMBER = 1;
+      private int row_;
+      /**
+       * <code>int32 row = 1;</code>
+       * @return The row.
+       */
+      @java.lang.Override
+      public int getRow() {
+        return row_;
+      }
+
+      public static final int COL_FIELD_NUMBER = 2;
+      private int col_;
+      /**
+       * <code>int32 col = 2;</code>
+       * @return The col.
+       */
+      @java.lang.Override
+      public int getCol() {
+        return col_;
+      }
+
+      public static final int MARK_FIELD_NUMBER = 3;
+      private volatile java.lang.Object mark_;
+      /**
+       * <pre>
+       * Добавьте поле для метки игрока
+       * </pre>
+       *
+       * <code>string mark = 3;</code>
+       * @return The mark.
+       */
+      @java.lang.Override
+      public java.lang.String getMark() {
+        java.lang.Object ref = mark_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mark_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Добавьте поле для метки игрока
+       * </pre>
+       *
+       * <code>string mark = 3;</code>
+       * @return The bytes for mark.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getMarkBytes() {
+        java.lang.Object ref = mark_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mark_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (row_ != 0) {
+          output.writeInt32(1, row_);
+        }
+        if (col_ != 0) {
+          output.writeInt32(2, col_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mark_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mark_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (row_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, row_);
+        }
+        if (col_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(2, col_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mark_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mark_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.GameState.Square)) {
+          return super.equals(obj);
+        }
+        org.example.dotsandboxes.Dotsandboxes.GameState.Square other = (org.example.dotsandboxes.Dotsandboxes.GameState.Square) obj;
+
+        if (getRow()
+            != other.getRow()) return false;
+        if (getCol()
+            != other.getCol()) return false;
+        if (!getMark()
+            .equals(other.getMark())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ROW_FIELD_NUMBER;
+        hash = (53 * hash) + getRow();
+        hash = (37 * hash) + COL_FIELD_NUMBER;
+        hash = (53 * hash) + getCol();
+        hash = (37 * hash) + MARK_FIELD_NUMBER;
+        hash = (53 * hash) + getMark().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.GameState.Square prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code org.example.dotsandboxes.GameState.Square}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.GameState.Square)
+          org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.example.dotsandboxes.Dotsandboxes.GameState.Square.class, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder.class);
+        }
+
+        // Construct using org.example.dotsandboxes.Dotsandboxes.GameState.Square.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          row_ = 0;
+
+          col_ = 0;
+
+          mark_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_Square_descriptor;
+        }
+
+        @java.lang.Override
+        public org.example.dotsandboxes.Dotsandboxes.GameState.Square getDefaultInstanceForType() {
+          return org.example.dotsandboxes.Dotsandboxes.GameState.Square.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public org.example.dotsandboxes.Dotsandboxes.GameState.Square build() {
+          org.example.dotsandboxes.Dotsandboxes.GameState.Square result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public org.example.dotsandboxes.Dotsandboxes.GameState.Square buildPartial() {
+          org.example.dotsandboxes.Dotsandboxes.GameState.Square result = new org.example.dotsandboxes.Dotsandboxes.GameState.Square(this);
+          result.row_ = row_;
+          result.col_ = col_;
+          result.mark_ = mark_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.example.dotsandboxes.Dotsandboxes.GameState.Square) {
+            return mergeFrom((org.example.dotsandboxes.Dotsandboxes.GameState.Square)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.GameState.Square other) {
+          if (other == org.example.dotsandboxes.Dotsandboxes.GameState.Square.getDefaultInstance()) return this;
+          if (other.getRow() != 0) {
+            setRow(other.getRow());
+          }
+          if (other.getCol() != 0) {
+            setCol(other.getCol());
+          }
+          if (!other.getMark().isEmpty()) {
+            mark_ = other.mark_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.example.dotsandboxes.Dotsandboxes.GameState.Square parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.example.dotsandboxes.Dotsandboxes.GameState.Square) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int row_ ;
+        /**
+         * <code>int32 row = 1;</code>
+         * @return The row.
+         */
+        @java.lang.Override
+        public int getRow() {
+          return row_;
+        }
+        /**
+         * <code>int32 row = 1;</code>
+         * @param value The row to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRow(int value) {
+          
+          row_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int32 row = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRow() {
+          
+          row_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int col_ ;
+        /**
+         * <code>int32 col = 2;</code>
+         * @return The col.
+         */
+        @java.lang.Override
+        public int getCol() {
+          return col_;
+        }
+        /**
+         * <code>int32 col = 2;</code>
+         * @param value The col to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCol(int value) {
+          
+          col_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int32 col = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearCol() {
+          
+          col_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object mark_ = "";
+        /**
+         * <pre>
+         * Добавьте поле для метки игрока
+         * </pre>
+         *
+         * <code>string mark = 3;</code>
+         * @return The mark.
+         */
+        public java.lang.String getMark() {
+          java.lang.Object ref = mark_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            mark_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Добавьте поле для метки игрока
+         * </pre>
+         *
+         * <code>string mark = 3;</code>
+         * @return The bytes for mark.
+         */
+        public com.google.protobuf.ByteString
+            getMarkBytes() {
+          java.lang.Object ref = mark_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            mark_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Добавьте поле для метки игрока
+         * </pre>
+         *
+         * <code>string mark = 3;</code>
+         * @param value The mark to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMark(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          mark_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Добавьте поле для метки игрока
+         * </pre>
+         *
+         * <code>string mark = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearMark() {
+          
+          mark_ = getDefaultInstance().getMark();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Добавьте поле для метки игрока
+         * </pre>
+         *
+         * <code>string mark = 3;</code>
+         * @param value The bytes for mark to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMarkBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          mark_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.GameState.Square)
+      }
+
+      // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.GameState.Square)
+      private static final org.example.dotsandboxes.Dotsandboxes.GameState.Square DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.GameState.Square();
+      }
+
+      public static org.example.dotsandboxes.Dotsandboxes.GameState.Square getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Square>
+          PARSER = new com.google.protobuf.AbstractParser<Square>() {
+        @java.lang.Override
+        public Square parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Square(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Square> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Square> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Square getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int GRIDSIZE_FIELD_NUMBER = 1;
+    private int gridSize_;
+    /**
+     * <code>int32 gridSize = 1;</code>
+     * @return The gridSize.
+     */
+    @java.lang.Override
+    public int getGridSize() {
+      return gridSize_;
+    }
+
+    public static final int PLAYER1TURN_FIELD_NUMBER = 2;
+    private boolean player1Turn_;
+    /**
+     * <code>bool player1Turn = 2;</code>
+     * @return The player1Turn.
+     */
+    @java.lang.Override
+    public boolean getPlayer1Turn() {
+      return player1Turn_;
+    }
+
+    public static final int LINES_FIELD_NUMBER = 3;
+    private java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Line> lines_;
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Line> getLinesList() {
+      return lines_;
+    }
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder> 
+        getLinesOrBuilderList() {
+      return lines_;
+    }
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    @java.lang.Override
+    public int getLinesCount() {
+      return lines_.size();
+    }
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    @java.lang.Override
+    public org.example.dotsandboxes.Dotsandboxes.GameState.Line getLines(int index) {
+      return lines_.get(index);
+    }
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+     */
+    @java.lang.Override
+    public org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder getLinesOrBuilder(
+        int index) {
+      return lines_.get(index);
+    }
+
+    public static final int SQUARES_FIELD_NUMBER = 4;
+    private java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> squares_;
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> getSquaresList() {
+      return squares_;
+    }
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> 
+        getSquaresOrBuilderList() {
+      return squares_;
+    }
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    @java.lang.Override
+    public int getSquaresCount() {
+      return squares_.size();
+    }
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    @java.lang.Override
+    public org.example.dotsandboxes.Dotsandboxes.GameState.Square getSquares(int index) {
+      return squares_.get(index);
+    }
+    /**
+     * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+     */
+    @java.lang.Override
+    public org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder getSquaresOrBuilder(
+        int index) {
+      return squares_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (gridSize_ != 0) {
+        output.writeInt32(1, gridSize_);
+      }
+      if (player1Turn_ != false) {
+        output.writeBool(2, player1Turn_);
+      }
+      for (int i = 0; i < lines_.size(); i++) {
+        output.writeMessage(3, lines_.get(i));
+      }
+      for (int i = 0; i < squares_.size(); i++) {
+        output.writeMessage(4, squares_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (gridSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, gridSize_);
+      }
+      if (player1Turn_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, player1Turn_);
+      }
+      for (int i = 0; i < lines_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, lines_.get(i));
+      }
+      for (int i = 0; i < squares_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, squares_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.GameState)) {
+        return super.equals(obj);
+      }
+      org.example.dotsandboxes.Dotsandboxes.GameState other = (org.example.dotsandboxes.Dotsandboxes.GameState) obj;
+
+      if (getGridSize()
+          != other.getGridSize()) return false;
+      if (getPlayer1Turn()
+          != other.getPlayer1Turn()) return false;
+      if (!getLinesList()
+          .equals(other.getLinesList())) return false;
+      if (!getSquaresList()
+          .equals(other.getSquaresList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GRIDSIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getGridSize();
+      hash = (37 * hash) + PLAYER1TURN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPlayer1Turn());
+      if (getLinesCount() > 0) {
+        hash = (37 * hash) + LINES_FIELD_NUMBER;
+        hash = (53 * hash) + getLinesList().hashCode();
+      }
+      if (getSquaresCount() > 0) {
+        hash = (37 * hash) + SQUARES_FIELD_NUMBER;
+        hash = (53 * hash) + getSquaresList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.example.dotsandboxes.Dotsandboxes.GameState parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.GameState prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code org.example.dotsandboxes.GameState}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.GameState)
+        org.example.dotsandboxes.Dotsandboxes.GameStateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.example.dotsandboxes.Dotsandboxes.GameState.class, org.example.dotsandboxes.Dotsandboxes.GameState.Builder.class);
+      }
+
+      // Construct using org.example.dotsandboxes.Dotsandboxes.GameState.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLinesFieldBuilder();
+          getSquaresFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        gridSize_ = 0;
+
+        player1Turn_ = false;
+
+        if (linesBuilder_ == null) {
+          lines_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          linesBuilder_.clear();
+        }
+        if (squaresBuilder_ == null) {
+          squares_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          squaresBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_GameState_descriptor;
+      }
+
+      @java.lang.Override
+      public org.example.dotsandboxes.Dotsandboxes.GameState getDefaultInstanceForType() {
+        return org.example.dotsandboxes.Dotsandboxes.GameState.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.example.dotsandboxes.Dotsandboxes.GameState build() {
+        org.example.dotsandboxes.Dotsandboxes.GameState result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.example.dotsandboxes.Dotsandboxes.GameState buildPartial() {
+        org.example.dotsandboxes.Dotsandboxes.GameState result = new org.example.dotsandboxes.Dotsandboxes.GameState(this);
+        int from_bitField0_ = bitField0_;
+        result.gridSize_ = gridSize_;
+        result.player1Turn_ = player1Turn_;
+        if (linesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            lines_ = java.util.Collections.unmodifiableList(lines_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.lines_ = lines_;
+        } else {
+          result.lines_ = linesBuilder_.build();
+        }
+        if (squaresBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            squares_ = java.util.Collections.unmodifiableList(squares_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.squares_ = squares_;
+        } else {
+          result.squares_ = squaresBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.example.dotsandboxes.Dotsandboxes.GameState) {
+          return mergeFrom((org.example.dotsandboxes.Dotsandboxes.GameState)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.GameState other) {
+        if (other == org.example.dotsandboxes.Dotsandboxes.GameState.getDefaultInstance()) return this;
+        if (other.getGridSize() != 0) {
+          setGridSize(other.getGridSize());
+        }
+        if (other.getPlayer1Turn() != false) {
+          setPlayer1Turn(other.getPlayer1Turn());
+        }
+        if (linesBuilder_ == null) {
+          if (!other.lines_.isEmpty()) {
+            if (lines_.isEmpty()) {
+              lines_ = other.lines_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureLinesIsMutable();
+              lines_.addAll(other.lines_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.lines_.isEmpty()) {
+            if (linesBuilder_.isEmpty()) {
+              linesBuilder_.dispose();
+              linesBuilder_ = null;
+              lines_ = other.lines_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              linesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLinesFieldBuilder() : null;
+            } else {
+              linesBuilder_.addAllMessages(other.lines_);
+            }
+          }
+        }
+        if (squaresBuilder_ == null) {
+          if (!other.squares_.isEmpty()) {
+            if (squares_.isEmpty()) {
+              squares_ = other.squares_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSquaresIsMutable();
+              squares_.addAll(other.squares_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.squares_.isEmpty()) {
+            if (squaresBuilder_.isEmpty()) {
+              squaresBuilder_.dispose();
+              squaresBuilder_ = null;
+              squares_ = other.squares_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              squaresBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSquaresFieldBuilder() : null;
+            } else {
+              squaresBuilder_.addAllMessages(other.squares_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.example.dotsandboxes.Dotsandboxes.GameState parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.example.dotsandboxes.Dotsandboxes.GameState) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int gridSize_ ;
+      /**
+       * <code>int32 gridSize = 1;</code>
+       * @return The gridSize.
+       */
+      @java.lang.Override
+      public int getGridSize() {
+        return gridSize_;
+      }
+      /**
+       * <code>int32 gridSize = 1;</code>
+       * @param value The gridSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGridSize(int value) {
+        
+        gridSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 gridSize = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGridSize() {
+        
+        gridSize_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean player1Turn_ ;
+      /**
+       * <code>bool player1Turn = 2;</code>
+       * @return The player1Turn.
+       */
+      @java.lang.Override
+      public boolean getPlayer1Turn() {
+        return player1Turn_;
+      }
+      /**
+       * <code>bool player1Turn = 2;</code>
+       * @param value The player1Turn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayer1Turn(boolean value) {
+        
+        player1Turn_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool player1Turn = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayer1Turn() {
+        
+        player1Turn_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Line> lines_ =
+        java.util.Collections.emptyList();
+      private void ensureLinesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          lines_ = new java.util.ArrayList<org.example.dotsandboxes.Dotsandboxes.GameState.Line>(lines_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.example.dotsandboxes.Dotsandboxes.GameState.Line, org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder, org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder> linesBuilder_;
+
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Line> getLinesList() {
+        if (linesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(lines_);
+        } else {
+          return linesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public int getLinesCount() {
+        if (linesBuilder_ == null) {
+          return lines_.size();
+        } else {
+          return linesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Line getLines(int index) {
+        if (linesBuilder_ == null) {
+          return lines_.get(index);
+        } else {
+          return linesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public Builder setLines(
+          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Line value) {
+        if (linesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinesIsMutable();
+          lines_.set(index, value);
+          onChanged();
+        } else {
+          linesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public Builder setLines(
+          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder builderForValue) {
+        if (linesBuilder_ == null) {
+          ensureLinesIsMutable();
+          lines_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          linesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public Builder addLines(org.example.dotsandboxes.Dotsandboxes.GameState.Line value) {
+        if (linesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinesIsMutable();
+          lines_.add(value);
+          onChanged();
+        } else {
+          linesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public Builder addLines(
+          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Line value) {
+        if (linesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinesIsMutable();
+          lines_.add(index, value);
+          onChanged();
+        } else {
+          linesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public Builder addLines(
+          org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder builderForValue) {
+        if (linesBuilder_ == null) {
+          ensureLinesIsMutable();
+          lines_.add(builderForValue.build());
+          onChanged();
+        } else {
+          linesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public Builder addLines(
+          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder builderForValue) {
+        if (linesBuilder_ == null) {
+          ensureLinesIsMutable();
+          lines_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          linesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public Builder addAllLines(
+          java.lang.Iterable<? extends org.example.dotsandboxes.Dotsandboxes.GameState.Line> values) {
+        if (linesBuilder_ == null) {
+          ensureLinesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, lines_);
+          onChanged();
+        } else {
+          linesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public Builder clearLines() {
+        if (linesBuilder_ == null) {
+          lines_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          linesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public Builder removeLines(int index) {
+        if (linesBuilder_ == null) {
+          ensureLinesIsMutable();
+          lines_.remove(index);
+          onChanged();
+        } else {
+          linesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder getLinesBuilder(
+          int index) {
+        return getLinesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder getLinesOrBuilder(
+          int index) {
+        if (linesBuilder_ == null) {
+          return lines_.get(index);  } else {
+          return linesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder> 
+           getLinesOrBuilderList() {
+        if (linesBuilder_ != null) {
+          return linesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(lines_);
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder addLinesBuilder() {
+        return getLinesFieldBuilder().addBuilder(
+            org.example.dotsandboxes.Dotsandboxes.GameState.Line.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder addLinesBuilder(
+          int index) {
+        return getLinesFieldBuilder().addBuilder(
+            index, org.example.dotsandboxes.Dotsandboxes.GameState.Line.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Line lines = 3;</code>
+       */
+      public java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder> 
+           getLinesBuilderList() {
+        return getLinesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.example.dotsandboxes.Dotsandboxes.GameState.Line, org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder, org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder> 
+          getLinesFieldBuilder() {
+        if (linesBuilder_ == null) {
+          linesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.example.dotsandboxes.Dotsandboxes.GameState.Line, org.example.dotsandboxes.Dotsandboxes.GameState.Line.Builder, org.example.dotsandboxes.Dotsandboxes.GameState.LineOrBuilder>(
+                  lines_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          lines_ = null;
+        }
+        return linesBuilder_;
+      }
+
+      private java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> squares_ =
+        java.util.Collections.emptyList();
+      private void ensureSquaresIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          squares_ = new java.util.ArrayList<org.example.dotsandboxes.Dotsandboxes.GameState.Square>(squares_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.example.dotsandboxes.Dotsandboxes.GameState.Square, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder, org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> squaresBuilder_;
+
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square> getSquaresList() {
+        if (squaresBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(squares_);
+        } else {
+          return squaresBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public int getSquaresCount() {
+        if (squaresBuilder_ == null) {
+          return squares_.size();
+        } else {
+          return squaresBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Square getSquares(int index) {
+        if (squaresBuilder_ == null) {
+          return squares_.get(index);
+        } else {
+          return squaresBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public Builder setSquares(
+          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Square value) {
+        if (squaresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSquaresIsMutable();
+          squares_.set(index, value);
+          onChanged();
+        } else {
+          squaresBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public Builder setSquares(
+          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder builderForValue) {
+        if (squaresBuilder_ == null) {
+          ensureSquaresIsMutable();
+          squares_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          squaresBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public Builder addSquares(org.example.dotsandboxes.Dotsandboxes.GameState.Square value) {
+        if (squaresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSquaresIsMutable();
+          squares_.add(value);
+          onChanged();
+        } else {
+          squaresBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public Builder addSquares(
+          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Square value) {
+        if (squaresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSquaresIsMutable();
+          squares_.add(index, value);
+          onChanged();
+        } else {
+          squaresBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public Builder addSquares(
+          org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder builderForValue) {
+        if (squaresBuilder_ == null) {
+          ensureSquaresIsMutable();
+          squares_.add(builderForValue.build());
+          onChanged();
+        } else {
+          squaresBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public Builder addSquares(
+          int index, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder builderForValue) {
+        if (squaresBuilder_ == null) {
+          ensureSquaresIsMutable();
+          squares_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          squaresBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public Builder addAllSquares(
+          java.lang.Iterable<? extends org.example.dotsandboxes.Dotsandboxes.GameState.Square> values) {
+        if (squaresBuilder_ == null) {
+          ensureSquaresIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, squares_);
+          onChanged();
+        } else {
+          squaresBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public Builder clearSquares() {
+        if (squaresBuilder_ == null) {
+          squares_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          squaresBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public Builder removeSquares(int index) {
+        if (squaresBuilder_ == null) {
+          ensureSquaresIsMutable();
+          squares_.remove(index);
+          onChanged();
+        } else {
+          squaresBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder getSquaresBuilder(
+          int index) {
+        return getSquaresFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder getSquaresOrBuilder(
+          int index) {
+        if (squaresBuilder_ == null) {
+          return squares_.get(index);  } else {
+          return squaresBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public java.util.List<? extends org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> 
+           getSquaresOrBuilderList() {
+        if (squaresBuilder_ != null) {
+          return squaresBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(squares_);
+        }
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder addSquaresBuilder() {
+        return getSquaresFieldBuilder().addBuilder(
+            org.example.dotsandboxes.Dotsandboxes.GameState.Square.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder addSquaresBuilder(
+          int index) {
+        return getSquaresFieldBuilder().addBuilder(
+            index, org.example.dotsandboxes.Dotsandboxes.GameState.Square.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.example.dotsandboxes.GameState.Square squares = 4;</code>
+       */
+      public java.util.List<org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder> 
+           getSquaresBuilderList() {
+        return getSquaresFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.example.dotsandboxes.Dotsandboxes.GameState.Square, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder, org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder> 
+          getSquaresFieldBuilder() {
+        if (squaresBuilder_ == null) {
+          squaresBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.example.dotsandboxes.Dotsandboxes.GameState.Square, org.example.dotsandboxes.Dotsandboxes.GameState.Square.Builder, org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder>(
+                  squares_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          squares_ = null;
+        }
+        return squaresBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.GameState)
+    }
+
+    // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.GameState)
+    private static final org.example.dotsandboxes.Dotsandboxes.GameState DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.GameState();
+    }
+
+    public static org.example.dotsandboxes.Dotsandboxes.GameState getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GameState>
+        PARSER = new com.google.protobuf.AbstractParser<GameState>() {
+      @java.lang.Override
+      public GameState parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GameState(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GameState> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GameState> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.example.dotsandboxes.Dotsandboxes.GameState getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface EmptyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.Empty)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
-   * <pre>
-   * Пустое сообщение
-   * </pre>
-   *
    * Protobuf type {@code org.example.dotsandboxes.Empty}
    */
   public static final class Empty extends
@@ -5765,10 +4337,6 @@ public final class Dotsandboxes {
       return builder;
     }
     /**
-     * <pre>
-     * Пустое сообщение
-     * </pre>
-     *
      * Protobuf type {@code org.example.dotsandboxes.Empty}
      */
     public static final class Builder extends
@@ -5961,1255 +4529,6 @@ public final class Dotsandboxes {
 
   }
 
-  public interface CurrentPlayerResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.CurrentPlayerResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Имя текущего игрока
-     * </pre>
-     *
-     * <code>string player = 1;</code>
-     * @return The player.
-     */
-    java.lang.String getPlayer();
-    /**
-     * <pre>
-     * Имя текущего игрока
-     * </pre>
-     *
-     * <code>string player = 1;</code>
-     * @return The bytes for player.
-     */
-    com.google.protobuf.ByteString
-        getPlayerBytes();
-  }
-  /**
-   * <pre>
-   * Ответ с текущим игроком
-   * </pre>
-   *
-   * Protobuf type {@code org.example.dotsandboxes.CurrentPlayerResponse}
-   */
-  public static final class CurrentPlayerResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.CurrentPlayerResponse)
-      CurrentPlayerResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CurrentPlayerResponse.newBuilder() to construct.
-    private CurrentPlayerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CurrentPlayerResponse() {
-      player_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new CurrentPlayerResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CurrentPlayerResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              player_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_CurrentPlayerResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_CurrentPlayerResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse.class, org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse.Builder.class);
-    }
-
-    public static final int PLAYER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object player_;
-    /**
-     * <pre>
-     * Имя текущего игрока
-     * </pre>
-     *
-     * <code>string player = 1;</code>
-     * @return The player.
-     */
-    @java.lang.Override
-    public java.lang.String getPlayer() {
-      java.lang.Object ref = player_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        player_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Имя текущего игрока
-     * </pre>
-     *
-     * <code>string player = 1;</code>
-     * @return The bytes for player.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPlayerBytes() {
-      java.lang.Object ref = player_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        player_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(player_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, player_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(player_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, player_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse)) {
-        return super.equals(obj);
-      }
-      org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse other = (org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse) obj;
-
-      if (!getPlayer()
-          .equals(other.getPlayer())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PLAYER_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayer().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Ответ с текущим игроком
-     * </pre>
-     *
-     * Protobuf type {@code org.example.dotsandboxes.CurrentPlayerResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.CurrentPlayerResponse)
-        org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_CurrentPlayerResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_CurrentPlayerResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse.class, org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse.Builder.class);
-      }
-
-      // Construct using org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        player_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_CurrentPlayerResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse getDefaultInstanceForType() {
-        return org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse build() {
-        org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse buildPartial() {
-        org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse result = new org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse(this);
-        result.player_ = player_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse) {
-          return mergeFrom((org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse other) {
-        if (other == org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse.getDefaultInstance()) return this;
-        if (!other.getPlayer().isEmpty()) {
-          player_ = other.player_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object player_ = "";
-      /**
-       * <pre>
-       * Имя текущего игрока
-       * </pre>
-       *
-       * <code>string player = 1;</code>
-       * @return The player.
-       */
-      public java.lang.String getPlayer() {
-        java.lang.Object ref = player_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          player_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Имя текущего игрока
-       * </pre>
-       *
-       * <code>string player = 1;</code>
-       * @return The bytes for player.
-       */
-      public com.google.protobuf.ByteString
-          getPlayerBytes() {
-        java.lang.Object ref = player_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          player_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Имя текущего игрока
-       * </pre>
-       *
-       * <code>string player = 1;</code>
-       * @param value The player to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayer(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        player_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Имя текущего игрока
-       * </pre>
-       *
-       * <code>string player = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayer() {
-        
-        player_ = getDefaultInstance().getPlayer();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Имя текущего игрока
-       * </pre>
-       *
-       * <code>string player = 1;</code>
-       * @param value The bytes for player to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayerBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        player_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.CurrentPlayerResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.CurrentPlayerResponse)
-    private static final org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse();
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CurrentPlayerResponse>
-        PARSER = new com.google.protobuf.AbstractParser<CurrentPlayerResponse>() {
-      @java.lang.Override
-      public CurrentPlayerResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CurrentPlayerResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CurrentPlayerResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CurrentPlayerResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface WinnerResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.example.dotsandboxes.WinnerResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Имя победителя
-     * </pre>
-     *
-     * <code>string winner = 1;</code>
-     * @return The winner.
-     */
-    java.lang.String getWinner();
-    /**
-     * <pre>
-     * Имя победителя
-     * </pre>
-     *
-     * <code>string winner = 1;</code>
-     * @return The bytes for winner.
-     */
-    com.google.protobuf.ByteString
-        getWinnerBytes();
-  }
-  /**
-   * <pre>
-   * Ответ с победителем
-   * </pre>
-   *
-   * Protobuf type {@code org.example.dotsandboxes.WinnerResponse}
-   */
-  public static final class WinnerResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:org.example.dotsandboxes.WinnerResponse)
-      WinnerResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use WinnerResponse.newBuilder() to construct.
-    private WinnerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private WinnerResponse() {
-      winner_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new WinnerResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private WinnerResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              winner_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_WinnerResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_WinnerResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.example.dotsandboxes.Dotsandboxes.WinnerResponse.class, org.example.dotsandboxes.Dotsandboxes.WinnerResponse.Builder.class);
-    }
-
-    public static final int WINNER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object winner_;
-    /**
-     * <pre>
-     * Имя победителя
-     * </pre>
-     *
-     * <code>string winner = 1;</code>
-     * @return The winner.
-     */
-    @java.lang.Override
-    public java.lang.String getWinner() {
-      java.lang.Object ref = winner_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        winner_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Имя победителя
-     * </pre>
-     *
-     * <code>string winner = 1;</code>
-     * @return The bytes for winner.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getWinnerBytes() {
-      java.lang.Object ref = winner_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        winner_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(winner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, winner_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(winner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, winner_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.example.dotsandboxes.Dotsandboxes.WinnerResponse)) {
-        return super.equals(obj);
-      }
-      org.example.dotsandboxes.Dotsandboxes.WinnerResponse other = (org.example.dotsandboxes.Dotsandboxes.WinnerResponse) obj;
-
-      if (!getWinner()
-          .equals(other.getWinner())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + WINNER_FIELD_NUMBER;
-      hash = (53 * hash) + getWinner().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.example.dotsandboxes.Dotsandboxes.WinnerResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Ответ с победителем
-     * </pre>
-     *
-     * Protobuf type {@code org.example.dotsandboxes.WinnerResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.example.dotsandboxes.WinnerResponse)
-        org.example.dotsandboxes.Dotsandboxes.WinnerResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_WinnerResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_WinnerResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.example.dotsandboxes.Dotsandboxes.WinnerResponse.class, org.example.dotsandboxes.Dotsandboxes.WinnerResponse.Builder.class);
-      }
-
-      // Construct using org.example.dotsandboxes.Dotsandboxes.WinnerResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        winner_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.example.dotsandboxes.Dotsandboxes.internal_static_org_example_dotsandboxes_WinnerResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.WinnerResponse getDefaultInstanceForType() {
-        return org.example.dotsandboxes.Dotsandboxes.WinnerResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.WinnerResponse build() {
-        org.example.dotsandboxes.Dotsandboxes.WinnerResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.example.dotsandboxes.Dotsandboxes.WinnerResponse buildPartial() {
-        org.example.dotsandboxes.Dotsandboxes.WinnerResponse result = new org.example.dotsandboxes.Dotsandboxes.WinnerResponse(this);
-        result.winner_ = winner_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.dotsandboxes.Dotsandboxes.WinnerResponse) {
-          return mergeFrom((org.example.dotsandboxes.Dotsandboxes.WinnerResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.example.dotsandboxes.Dotsandboxes.WinnerResponse other) {
-        if (other == org.example.dotsandboxes.Dotsandboxes.WinnerResponse.getDefaultInstance()) return this;
-        if (!other.getWinner().isEmpty()) {
-          winner_ = other.winner_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.example.dotsandboxes.Dotsandboxes.WinnerResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.example.dotsandboxes.Dotsandboxes.WinnerResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object winner_ = "";
-      /**
-       * <pre>
-       * Имя победителя
-       * </pre>
-       *
-       * <code>string winner = 1;</code>
-       * @return The winner.
-       */
-      public java.lang.String getWinner() {
-        java.lang.Object ref = winner_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          winner_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Имя победителя
-       * </pre>
-       *
-       * <code>string winner = 1;</code>
-       * @return The bytes for winner.
-       */
-      public com.google.protobuf.ByteString
-          getWinnerBytes() {
-        java.lang.Object ref = winner_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          winner_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Имя победителя
-       * </pre>
-       *
-       * <code>string winner = 1;</code>
-       * @param value The winner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWinner(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        winner_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Имя победителя
-       * </pre>
-       *
-       * <code>string winner = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWinner() {
-        
-        winner_ = getDefaultInstance().getWinner();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Имя победителя
-       * </pre>
-       *
-       * <code>string winner = 1;</code>
-       * @param value The bytes for winner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWinnerBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        winner_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:org.example.dotsandboxes.WinnerResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:org.example.dotsandboxes.WinnerResponse)
-    private static final org.example.dotsandboxes.Dotsandboxes.WinnerResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.example.dotsandboxes.Dotsandboxes.WinnerResponse();
-    }
-
-    public static org.example.dotsandboxes.Dotsandboxes.WinnerResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<WinnerResponse>
-        PARSER = new com.google.protobuf.AbstractParser<WinnerResponse>() {
-      @java.lang.Override
-      public WinnerResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WinnerResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<WinnerResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<WinnerResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.example.dotsandboxes.Dotsandboxes.WinnerResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_example_dotsandboxes_StartGameRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_example_dotsandboxes_StartGameRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_example_dotsandboxes_StartGameResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_example_dotsandboxes_StartGameResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_example_dotsandboxes_Line_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_example_dotsandboxes_Line_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_example_dotsandboxes_GameState_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_example_dotsandboxes_GameState_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_example_dotsandboxes_GameState_Square_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_example_dotsandboxes_GameState_Square_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_example_dotsandboxes_MakeMoveRequest_descriptor;
   private static final 
@@ -7221,20 +4540,25 @@ public final class Dotsandboxes {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_example_dotsandboxes_MakeMoveResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_example_dotsandboxes_GameState_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_org_example_dotsandboxes_GameState_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_example_dotsandboxes_GameState_Line_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_org_example_dotsandboxes_GameState_Line_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_example_dotsandboxes_GameState_Square_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_org_example_dotsandboxes_GameState_Square_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_example_dotsandboxes_Empty_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_example_dotsandboxes_Empty_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_example_dotsandboxes_CurrentPlayerResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_example_dotsandboxes_CurrentPlayerResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_example_dotsandboxes_WinnerResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_example_dotsandboxes_WinnerResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7245,99 +4569,65 @@ public final class Dotsandboxes {
   static {
     java.lang.String[] descriptorData = {
       "\n\022dotsandboxes.proto\022\030org.example.dotsan" +
-      "dboxes\" \n\020StartGameRequest\022\014\n\004size\030\001 \001(\005" +
-      "\"$\n\021StartGameResponse\022\017\n\007message\030\001 \001(\t\"X" +
-      "\n\004Line\022\013\n\003row\030\001 \001(\005\022\013\n\003col\030\002 \001(\005\0226\n\tdire" +
-      "ction\030\003 \001(\0162#.org.example.dotsandboxes.D" +
-      "irection\"\323\001\n\tGameState\022\024\n\014player1_turn\030\001" +
-      " \001(\010\022;\n\007squares\030\002 \003(\0132*.org.example.dots" +
-      "andboxes.GameState.Square\022-\n\005lines\030\003 \003(\013" +
-      "2\036.org.example.dotsandboxes.Line\022\021\n\tgrid" +
-      "_size\030\004 \001(\005\0321\n\006Square\022\013\n\003row\030\001 \001(\005\022\013\n\003co" +
-      "l\030\002 \001(\005\022\r\n\005owner\030\003 \001(\005\"A\n\017MakeMoveReques" +
-      "t\022\n\n\002x1\030\001 \001(\005\022\n\n\002y1\030\002 \001(\005\022\n\n\002x2\030\003 \001(\005\022\n\n" +
-      "\002y2\030\004 \001(\005\"#\n\020MakeMoveResponse\022\017\n\007message" +
-      "\030\001 \001(\t\"\007\n\005Empty\"\'\n\025CurrentPlayerResponse" +
-      "\022\016\n\006player\030\001 \001(\t\" \n\016WinnerResponse\022\016\n\006wi" +
-      "nner\030\001 \001(\t*)\n\tDirection\022\016\n\nHORIZONTAL\020\000\022" +
-      "\014\n\010VERTICAL\020\0012\351\003\n\013GameService\022d\n\tstartGa" +
-      "me\022*.org.example.dotsandboxes.StartGameR" +
-      "equest\032+.org.example.dotsandboxes.StartG" +
-      "ameResponse\022a\n\010makeMove\022).org.example.do" +
-      "tsandboxes.MakeMoveRequest\032*.org.example" +
-      ".dotsandboxes.MakeMoveResponse\022d\n\020getCur" +
-      "rentPlayer\022\037.org.example.dotsandboxes.Em" +
-      "pty\032/.org.example.dotsandboxes.CurrentPl" +
-      "ayerResponse\022S\n\twatchGame\022\037.org.example." +
-      "dotsandboxes.Empty\032#.org.example.dotsand" +
-      "boxes.GameState0\001\022V\n\tgetWinner\022\037.org.exa" +
-      "mple.dotsandboxes.Empty\032(.org.example.do" +
-      "tsandboxes.WinnerResponseb\006proto3"
+      "dboxes\"A\n\017MakeMoveRequest\022\n\n\002x1\030\001 \001(\005\022\n\n" +
+      "\002y1\030\002 \001(\005\022\n\n\002x2\030\003 \001(\005\022\n\n\002y2\030\004 \001(\005\"#\n\020Mak" +
+      "eMoveResponse\022\017\n\007message\030\001 \001(\t\"\351\002\n\tGameS" +
+      "tate\022\020\n\010gridSize\030\001 \001(\005\022\023\n\013player1Turn\030\002 " +
+      "\001(\010\0227\n\005lines\030\003 \003(\0132(.org.example.dotsand" +
+      "boxes.GameState.Line\022;\n\007squares\030\004 \003(\0132*." +
+      "org.example.dotsandboxes.GameState.Squar" +
+      "e\032b\n\004Line\022\013\n\003row\030\001 \001(\005\022\013\n\003col\030\002 \001(\005\022@\n\td" +
+      "irection\030\003 \001(\0162-.org.example.dotsandboxe" +
+      "s.GameState.Direction\0320\n\006Square\022\013\n\003row\030\001" +
+      " \001(\005\022\013\n\003col\030\002 \001(\005\022\014\n\004mark\030\003 \001(\t\")\n\tDirec" +
+      "tion\022\016\n\nHORIZONTAL\020\000\022\014\n\010VERTICAL\020\001\"\007\n\005Em" +
+      "pty2\305\001\n\013GameService\022a\n\010makeMove\022).org.ex" +
+      "ample.dotsandboxes.MakeMoveRequest\032*.org" +
+      ".example.dotsandboxes.MakeMoveResponse\022S" +
+      "\n\twatchGame\022\037.org.example.dotsandboxes.E" +
+      "mpty\032#.org.example.dotsandboxes.GameStat" +
+      "e0\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_org_example_dotsandboxes_StartGameRequest_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_org_example_dotsandboxes_StartGameRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_example_dotsandboxes_StartGameRequest_descriptor,
-        new java.lang.String[] { "Size", });
-    internal_static_org_example_dotsandboxes_StartGameResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_org_example_dotsandboxes_StartGameResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_example_dotsandboxes_StartGameResponse_descriptor,
-        new java.lang.String[] { "Message", });
-    internal_static_org_example_dotsandboxes_Line_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_org_example_dotsandboxes_Line_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_example_dotsandboxes_Line_descriptor,
-        new java.lang.String[] { "Row", "Col", "Direction", });
-    internal_static_org_example_dotsandboxes_GameState_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_org_example_dotsandboxes_GameState_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_example_dotsandboxes_GameState_descriptor,
-        new java.lang.String[] { "Player1Turn", "Squares", "Lines", "GridSize", });
-    internal_static_org_example_dotsandboxes_GameState_Square_descriptor =
-      internal_static_org_example_dotsandboxes_GameState_descriptor.getNestedTypes().get(0);
-    internal_static_org_example_dotsandboxes_GameState_Square_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_example_dotsandboxes_GameState_Square_descriptor,
-        new java.lang.String[] { "Row", "Col", "Owner", });
     internal_static_org_example_dotsandboxes_MakeMoveRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_org_example_dotsandboxes_MakeMoveRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_example_dotsandboxes_MakeMoveRequest_descriptor,
         new java.lang.String[] { "X1", "Y1", "X2", "Y2", });
     internal_static_org_example_dotsandboxes_MakeMoveResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_org_example_dotsandboxes_MakeMoveResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_example_dotsandboxes_MakeMoveResponse_descriptor,
         new java.lang.String[] { "Message", });
+    internal_static_org_example_dotsandboxes_GameState_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_org_example_dotsandboxes_GameState_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_org_example_dotsandboxes_GameState_descriptor,
+        new java.lang.String[] { "GridSize", "Player1Turn", "Lines", "Squares", });
+    internal_static_org_example_dotsandboxes_GameState_Line_descriptor =
+      internal_static_org_example_dotsandboxes_GameState_descriptor.getNestedTypes().get(0);
+    internal_static_org_example_dotsandboxes_GameState_Line_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_org_example_dotsandboxes_GameState_Line_descriptor,
+        new java.lang.String[] { "Row", "Col", "Direction", });
+    internal_static_org_example_dotsandboxes_GameState_Square_descriptor =
+      internal_static_org_example_dotsandboxes_GameState_descriptor.getNestedTypes().get(1);
+    internal_static_org_example_dotsandboxes_GameState_Square_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_org_example_dotsandboxes_GameState_Square_descriptor,
+        new java.lang.String[] { "Row", "Col", "Mark", });
     internal_static_org_example_dotsandboxes_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_org_example_dotsandboxes_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_example_dotsandboxes_Empty_descriptor,
         new java.lang.String[] { });
-    internal_static_org_example_dotsandboxes_CurrentPlayerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_org_example_dotsandboxes_CurrentPlayerResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_example_dotsandboxes_CurrentPlayerResponse_descriptor,
-        new java.lang.String[] { "Player", });
-    internal_static_org_example_dotsandboxes_WinnerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_org_example_dotsandboxes_WinnerResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_example_dotsandboxes_WinnerResponse_descriptor,
-        new java.lang.String[] { "Winner", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
