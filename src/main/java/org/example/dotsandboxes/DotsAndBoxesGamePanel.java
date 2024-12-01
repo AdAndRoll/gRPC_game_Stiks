@@ -115,8 +115,25 @@ public class DotsAndBoxesGamePanel extends JPanel {
                 .setY2(p2.y)
                 .build();
 
-        Dotsandboxes.MakeMoveResponse response = blockingStub.makeMove(request);
-        System.out.println("Server response: " + response.getMessage());
+        asyncStub.makeMove(request, new StreamObserver<Dotsandboxes.MakeMoveResponse>() {
+            @Override
+            public void onNext(Dotsandboxes.MakeMoveResponse response) {
+                System.out.println("Server response: " + response.getMessage());
+                // Обработка ответа от сервера, например, переключение игрока
+                togglePlayer();
+                repaint();
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+                throwable.printStackTrace();
+            }
+
+            @Override
+            public void onCompleted() {
+                // Завершение обработки запроса
+            }
+        });
     }
 
     private boolean checkAndUpdateSquares(int row, int col, boolean isHorizontal) {

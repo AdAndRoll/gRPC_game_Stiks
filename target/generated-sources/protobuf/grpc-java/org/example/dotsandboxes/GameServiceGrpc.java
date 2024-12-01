@@ -112,6 +112,37 @@ public final class GameServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty,
+      org.example.dotsandboxes.Dotsandboxes.GameState> getWatchGameMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "watchGame",
+      requestType = org.example.dotsandboxes.Dotsandboxes.Empty.class,
+      responseType = org.example.dotsandboxes.Dotsandboxes.GameState.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty,
+      org.example.dotsandboxes.Dotsandboxes.GameState> getWatchGameMethod() {
+    io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty, org.example.dotsandboxes.Dotsandboxes.GameState> getWatchGameMethod;
+    if ((getWatchGameMethod = GameServiceGrpc.getWatchGameMethod) == null) {
+      synchronized (GameServiceGrpc.class) {
+        if ((getWatchGameMethod = GameServiceGrpc.getWatchGameMethod) == null) {
+          GameServiceGrpc.getWatchGameMethod = getWatchGameMethod =
+              io.grpc.MethodDescriptor.<org.example.dotsandboxes.Dotsandboxes.Empty, org.example.dotsandboxes.Dotsandboxes.GameState>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "watchGame"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.dotsandboxes.Dotsandboxes.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.dotsandboxes.Dotsandboxes.GameState.getDefaultInstance()))
+              .setSchemaDescriptor(new GameServiceMethodDescriptorSupplier("watchGame"))
+              .build();
+        }
+      }
+    }
+    return getWatchGameMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.example.dotsandboxes.Dotsandboxes.Empty,
       org.example.dotsandboxes.Dotsandboxes.WinnerResponse> getGetWinnerMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
@@ -194,9 +225,6 @@ public final class GameServiceGrpc {
   public static abstract class GameServiceImplBase implements io.grpc.BindableService {
 
     /**
-     * <pre>
-     * Метод для начала игры
-     * </pre>
      */
     public void startGame(org.example.dotsandboxes.Dotsandboxes.StartGameRequest request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.StartGameResponse> responseObserver) {
@@ -204,9 +232,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для выполнения хода
-     * </pre>
      */
     public void makeMove(org.example.dotsandboxes.Dotsandboxes.MakeMoveRequest request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse> responseObserver) {
@@ -214,9 +239,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для получения текущего игрока
-     * </pre>
      */
     public void getCurrentPlayer(org.example.dotsandboxes.Dotsandboxes.Empty request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse> responseObserver) {
@@ -225,8 +247,15 @@ public final class GameServiceGrpc {
 
     /**
      * <pre>
-     * Метод для получения победителя
+     * Потоковое обновление состояния игры
      * </pre>
+     */
+    public void watchGame(org.example.dotsandboxes.Dotsandboxes.Empty request,
+        io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.GameState> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getWatchGameMethod(), responseObserver);
+    }
+
+    /**
      */
     public void getWinner(org.example.dotsandboxes.Dotsandboxes.Empty request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.WinnerResponse> responseObserver) {
@@ -257,6 +286,13 @@ public final class GameServiceGrpc {
                 org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse>(
                   this, METHODID_GET_CURRENT_PLAYER)))
           .addMethod(
+            getWatchGameMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+              new MethodHandlers<
+                org.example.dotsandboxes.Dotsandboxes.Empty,
+                org.example.dotsandboxes.Dotsandboxes.GameState>(
+                  this, METHODID_WATCH_GAME)))
+          .addMethod(
             getGetWinnerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -285,9 +321,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для начала игры
-     * </pre>
      */
     public void startGame(org.example.dotsandboxes.Dotsandboxes.StartGameRequest request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.StartGameResponse> responseObserver) {
@@ -296,9 +329,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для выполнения хода
-     * </pre>
      */
     public void makeMove(org.example.dotsandboxes.Dotsandboxes.MakeMoveRequest request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse> responseObserver) {
@@ -307,9 +337,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для получения текущего игрока
-     * </pre>
      */
     public void getCurrentPlayer(org.example.dotsandboxes.Dotsandboxes.Empty request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse> responseObserver) {
@@ -319,8 +346,16 @@ public final class GameServiceGrpc {
 
     /**
      * <pre>
-     * Метод для получения победителя
+     * Потоковое обновление состояния игры
      * </pre>
+     */
+    public void watchGame(org.example.dotsandboxes.Dotsandboxes.Empty request,
+        io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.GameState> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getWatchGameMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      */
     public void getWinner(org.example.dotsandboxes.Dotsandboxes.Empty request,
         io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.WinnerResponse> responseObserver) {
@@ -347,9 +382,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для начала игры
-     * </pre>
      */
     public org.example.dotsandboxes.Dotsandboxes.StartGameResponse startGame(org.example.dotsandboxes.Dotsandboxes.StartGameRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -357,9 +389,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для выполнения хода
-     * </pre>
      */
     public org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse makeMove(org.example.dotsandboxes.Dotsandboxes.MakeMoveRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -367,9 +396,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для получения текущего игрока
-     * </pre>
      */
     public org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse getCurrentPlayer(org.example.dotsandboxes.Dotsandboxes.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -378,8 +404,16 @@ public final class GameServiceGrpc {
 
     /**
      * <pre>
-     * Метод для получения победителя
+     * Потоковое обновление состояния игры
      * </pre>
+     */
+    public java.util.Iterator<org.example.dotsandboxes.Dotsandboxes.GameState> watchGame(
+        org.example.dotsandboxes.Dotsandboxes.Empty request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getWatchGameMethod(), getCallOptions(), request);
+    }
+
+    /**
      */
     public org.example.dotsandboxes.Dotsandboxes.WinnerResponse getWinner(org.example.dotsandboxes.Dotsandboxes.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -405,9 +439,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для начала игры
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<org.example.dotsandboxes.Dotsandboxes.StartGameResponse> startGame(
         org.example.dotsandboxes.Dotsandboxes.StartGameRequest request) {
@@ -416,9 +447,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для выполнения хода
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<org.example.dotsandboxes.Dotsandboxes.MakeMoveResponse> makeMove(
         org.example.dotsandboxes.Dotsandboxes.MakeMoveRequest request) {
@@ -427,9 +455,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для получения текущего игрока
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse> getCurrentPlayer(
         org.example.dotsandboxes.Dotsandboxes.Empty request) {
@@ -438,9 +463,6 @@ public final class GameServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Метод для получения победителя
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<org.example.dotsandboxes.Dotsandboxes.WinnerResponse> getWinner(
         org.example.dotsandboxes.Dotsandboxes.Empty request) {
@@ -452,7 +474,8 @@ public final class GameServiceGrpc {
   private static final int METHODID_START_GAME = 0;
   private static final int METHODID_MAKE_MOVE = 1;
   private static final int METHODID_GET_CURRENT_PLAYER = 2;
-  private static final int METHODID_GET_WINNER = 3;
+  private static final int METHODID_WATCH_GAME = 3;
+  private static final int METHODID_GET_WINNER = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -482,6 +505,10 @@ public final class GameServiceGrpc {
         case METHODID_GET_CURRENT_PLAYER:
           serviceImpl.getCurrentPlayer((org.example.dotsandboxes.Dotsandboxes.Empty) request,
               (io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.CurrentPlayerResponse>) responseObserver);
+          break;
+        case METHODID_WATCH_GAME:
+          serviceImpl.watchGame((org.example.dotsandboxes.Dotsandboxes.Empty) request,
+              (io.grpc.stub.StreamObserver<org.example.dotsandboxes.Dotsandboxes.GameState>) responseObserver);
           break;
         case METHODID_GET_WINNER:
           serviceImpl.getWinner((org.example.dotsandboxes.Dotsandboxes.Empty) request,
@@ -551,6 +578,7 @@ public final class GameServiceGrpc {
               .addMethod(getStartGameMethod())
               .addMethod(getMakeMoveMethod())
               .addMethod(getGetCurrentPlayerMethod())
+              .addMethod(getWatchGameMethod())
               .addMethod(getGetWinnerMethod())
               .build();
         }

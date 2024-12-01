@@ -4,16 +4,10 @@ package org.example.dotsandboxes;
 
 // Сервис для игры Dots and Boxes
 service GameService {
-  // Метод для начала игры
   rpc startGame (StartGameRequest) returns (StartGameResponse);
-
-  // Метод для выполнения хода
   rpc makeMove (MakeMoveRequest) returns (MakeMoveResponse);
-
-  // Метод для получения текущего игрока
   rpc getCurrentPlayer (Empty) returns (CurrentPlayerResponse);
-
-  // Метод для получения победителя
+  rpc watchGame (Empty) returns (stream GameState); // Потоковое обновление состояния игры
   rpc getWinner (Empty) returns (WinnerResponse);
 }
 
@@ -22,9 +16,36 @@ message StartGameRequest {
   int32 size = 1;  // Размер поля
 }
 
-// Ответ на начало игры
 message StartGameResponse {
   string message = 1;  // Сообщение о начале игры
+}
+
+// Направление линии
+enum Direction {
+  HORIZONTAL = 0; // Горизонтальная линия
+  VERTICAL = 1;   // Вертикальная линия
+}
+
+// Сообщение для линии
+message Line {
+  int32 row = 1;          // Строка, на которой расположена линия
+  int32 col = 2;          // Столбец, в котором расположена линия
+  Direction direction = 3; // Направление линии
+}
+
+// Состояние игры
+message GameState {
+  bool player1_turn = 1;
+  repeated Square squares = 2; // Список всех клеток
+  repeated Line lines = 3;     // Список всех линий (горизонтальных и вертикальных)
+  int32 grid_size = 4;         // Размер поля
+
+  // Сообщение для клетки
+  message Square {
+    int32 row = 1;
+    int32 col = 2;
+    int32 owner = 3; // 1 - Player 1, 2 - Player 2
+  }
 }
 
 // Запрос на выполнение хода
@@ -35,12 +56,11 @@ message MakeMoveRequest {
   int32 y2 = 4;
 }
 
-// Ответ на ход
 message MakeMoveResponse {
   string message = 1;  // Сообщение о выполнении хода
 }
 
-// Пустое сообщение, используется для запросов без параметров
+// Пустое сообщение
 message Empty {}
 
 // Ответ с текущим игроком
