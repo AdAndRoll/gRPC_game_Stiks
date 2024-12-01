@@ -19,7 +19,7 @@ message GameState {
   bool player1Turn = 2;
   repeated Line lines = 3;
   repeated Square squares = 4;
-
+  string winner = 5;
   message Line {
     int32 row = 1;
     int32 col = 2;

@@ -107,6 +107,7 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
                 .setPlayer1Turn(player1Turn)
                 .addAllLines(getAllLines())
                 .addAllSquares(getAllSquares())
+                .setWinner(getWinner())  // Добавляем победителя в начальное состояние
                 .build();
         responseObserver.onNext(gameState);
 
@@ -121,6 +122,7 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
                 .setPlayer1Turn(player1Turn)
                 .addAllLines(getAllLines())
                 .addAllSquares(getAllSquares())
+                .setWinner(getWinner())  // Добавляем победителя в обновление
                 .build();
 
         for (StreamObserver<Dotsandboxes.GameState> client : clients) {
@@ -179,7 +181,49 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
 
         return squaresList;
     }
-    public static void main(String[] args) throws InterruptedException {
+
+    // Подсчёт победителя и возврат его
+    private String getWinner() {
+        // Проверка, если все линии нарисованы
+        for (int i = 0; i < GRID_SIZE; i++) {
+            for (int j = 0; j < GRID_SIZE - 1; j++) {
+                if (!horizontal[i][j]) return ""; // Если хотя бы одна горизонтальная линия не нарисована
+            }
+        }
+
+        for (int i = 0; i < GRID_SIZE - 1; i++) {
+            for (int j = 0; j < GRID_SIZE; j++) {
+                if (!vertical[i][j]) return ""; // Если хотя бы одна вертикальная линия не нарисована
+            }
+        }
+
+        int player1Score = 0;
+        int player2Score = 0;
+
+        // Подсчёт заполненных квадратов для каждого игрока
+        for (int i = 0; i < GRID_SIZE - 1; i++) {
+            for (int j = 0; j < GRID_SIZE - 1; j++) {
+                if (squares[i][j]) {
+                    if (squareMarks[i][j].equals("X")) {
+                        player1Score++;
+                    } else if (squareMarks[i][j].equals("O")) {
+                        player2Score++;
+                    }
+                }
+            }
+        }
+
+        if (player1Score > player2Score) {
+            return "Player 1";
+        } else if (player2Score > player1Score) {
+            return "Player 2";
+        } else {
+            return "Draw";
+        }
+    }
+
+
+public static void main(String[] args) throws InterruptedException {
         // Настроим и запустим сервер
         GameServerImpl server = new GameServerImpl();
         io.grpc.Server grpcServer = io.grpc.ServerBuilder.forPort(50051)
@@ -195,3 +239,7 @@ public class GameServerImpl extends GameServiceGrpc.GameServiceImplBase {
         }
     }
 }
+
+
+
+

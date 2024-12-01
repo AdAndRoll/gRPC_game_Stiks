@@ -1351,6 +1351,18 @@ public final class Dotsandboxes {
      */
     org.example.dotsandboxes.Dotsandboxes.GameState.SquareOrBuilder getSquaresOrBuilder(
         int index);
+
+    /**
+     * <code>string winner = 5;</code>
+     * @return The winner.
+     */
+    java.lang.String getWinner();
+    /**
+     * <code>string winner = 5;</code>
+     * @return The bytes for winner.
+     */
+    com.google.protobuf.ByteString
+        getWinnerBytes();
   }
   /**
    * Protobuf type {@code org.example.dotsandboxes.GameState}
@@ -1367,6 +1379,7 @@ public final class Dotsandboxes {
     private GameState() {
       lines_ = java.util.Collections.emptyList();
       squares_ = java.util.Collections.emptyList();
+      winner_ = "";
     }
 
     @java.lang.Override
@@ -1426,6 +1439,12 @@ public final class Dotsandboxes {
               }
               squares_.add(
                   input.readMessage(org.example.dotsandboxes.Dotsandboxes.GameState.Square.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              winner_ = s;
               break;
             }
             default: {
@@ -3085,6 +3104,44 @@ public final class Dotsandboxes {
       return squares_.get(index);
     }
 
+    public static final int WINNER_FIELD_NUMBER = 5;
+    private volatile java.lang.Object winner_;
+    /**
+     * <code>string winner = 5;</code>
+     * @return The winner.
+     */
+    @java.lang.Override
+    public java.lang.String getWinner() {
+      java.lang.Object ref = winner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        winner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string winner = 5;</code>
+     * @return The bytes for winner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getWinnerBytes() {
+      java.lang.Object ref = winner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        winner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3111,6 +3168,9 @@ public final class Dotsandboxes {
       for (int i = 0; i < squares_.size(); i++) {
         output.writeMessage(4, squares_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(winner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, winner_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3136,6 +3196,9 @@ public final class Dotsandboxes {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, squares_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(winner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, winner_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3159,6 +3222,8 @@ public final class Dotsandboxes {
           .equals(other.getLinesList())) return false;
       if (!getSquaresList()
           .equals(other.getSquaresList())) return false;
+      if (!getWinner()
+          .equals(other.getWinner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3183,6 +3248,8 @@ public final class Dotsandboxes {
         hash = (37 * hash) + SQUARES_FIELD_NUMBER;
         hash = (53 * hash) + getSquaresList().hashCode();
       }
+      hash = (37 * hash) + WINNER_FIELD_NUMBER;
+      hash = (53 * hash) + getWinner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3334,6 +3401,8 @@ public final class Dotsandboxes {
         } else {
           squaresBuilder_.clear();
         }
+        winner_ = "";
+
         return this;
       }
 
@@ -3381,6 +3450,7 @@ public final class Dotsandboxes {
         } else {
           result.squares_ = squaresBuilder_.build();
         }
+        result.winner_ = winner_;
         onBuilt();
         return result;
       }
@@ -3486,6 +3556,10 @@ public final class Dotsandboxes {
               squaresBuilder_.addAllMessages(other.squares_);
             }
           }
+        }
+        if (!other.getWinner().isEmpty()) {
+          winner_ = other.winner_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4058,6 +4132,82 @@ public final class Dotsandboxes {
         }
         return squaresBuilder_;
       }
+
+      private java.lang.Object winner_ = "";
+      /**
+       * <code>string winner = 5;</code>
+       * @return The winner.
+       */
+      public java.lang.String getWinner() {
+        java.lang.Object ref = winner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          winner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string winner = 5;</code>
+       * @return The bytes for winner.
+       */
+      public com.google.protobuf.ByteString
+          getWinnerBytes() {
+        java.lang.Object ref = winner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          winner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string winner = 5;</code>
+       * @param value The winner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWinner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        winner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string winner = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWinner() {
+        
+        winner_ = getDefaultInstance().getWinner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string winner = 5;</code>
+       * @param value The bytes for winner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWinnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        winner_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4571,22 +4721,22 @@ public final class Dotsandboxes {
       "\n\022dotsandboxes.proto\022\030org.example.dotsan" +
       "dboxes\"A\n\017MakeMoveRequest\022\n\n\002x1\030\001 \001(\005\022\n\n" +
       "\002y1\030\002 \001(\005\022\n\n\002x2\030\003 \001(\005\022\n\n\002y2\030\004 \001(\005\"#\n\020Mak" +
-      "eMoveResponse\022\017\n\007message\030\001 \001(\t\"\351\002\n\tGameS" +
+      "eMoveResponse\022\017\n\007message\030\001 \001(\t\"\371\002\n\tGameS" +
       "tate\022\020\n\010gridSize\030\001 \001(\005\022\023\n\013player1Turn\030\002 " +
       "\001(\010\0227\n\005lines\030\003 \003(\0132(.org.example.dotsand" +
       "boxes.GameState.Line\022;\n\007squares\030\004 \003(\0132*." +
       "org.example.dotsandboxes.GameState.Squar" +
-      "e\032b\n\004Line\022\013\n\003row\030\001 \001(\005\022\013\n\003col\030\002 \001(\005\022@\n\td" +
-      "irection\030\003 \001(\0162-.org.example.dotsandboxe" +
-      "s.GameState.Direction\0320\n\006Square\022\013\n\003row\030\001" +
-      " \001(\005\022\013\n\003col\030\002 \001(\005\022\014\n\004mark\030\003 \001(\t\")\n\tDirec" +
-      "tion\022\016\n\nHORIZONTAL\020\000\022\014\n\010VERTICAL\020\001\"\007\n\005Em" +
-      "pty2\305\001\n\013GameService\022a\n\010makeMove\022).org.ex" +
-      "ample.dotsandboxes.MakeMoveRequest\032*.org" +
-      ".example.dotsandboxes.MakeMoveResponse\022S" +
-      "\n\twatchGame\022\037.org.example.dotsandboxes.E" +
-      "mpty\032#.org.example.dotsandboxes.GameStat" +
-      "e0\001b\006proto3"
+      "e\022\016\n\006winner\030\005 \001(\t\032b\n\004Line\022\013\n\003row\030\001 \001(\005\022\013" +
+      "\n\003col\030\002 \001(\005\022@\n\tdirection\030\003 \001(\0162-.org.exa" +
+      "mple.dotsandboxes.GameState.Direction\0320\n" +
+      "\006Square\022\013\n\003row\030\001 \001(\005\022\013\n\003col\030\002 \001(\005\022\014\n\004mar" +
+      "k\030\003 \001(\t\")\n\tDirection\022\016\n\nHORIZONTAL\020\000\022\014\n\010" +
+      "VERTICAL\020\001\"\007\n\005Empty2\305\001\n\013GameService\022a\n\010m" +
+      "akeMove\022).org.example.dotsandboxes.MakeM" +
+      "oveRequest\032*.org.example.dotsandboxes.Ma" +
+      "keMoveResponse\022S\n\twatchGame\022\037.org.exampl" +
+      "e.dotsandboxes.Empty\032#.org.example.dotsa" +
+      "ndboxes.GameState0\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4609,7 +4759,7 @@ public final class Dotsandboxes {
     internal_static_org_example_dotsandboxes_GameState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_example_dotsandboxes_GameState_descriptor,
-        new java.lang.String[] { "GridSize", "Player1Turn", "Lines", "Squares", });
+        new java.lang.String[] { "GridSize", "Player1Turn", "Lines", "Squares", "Winner", });
     internal_static_org_example_dotsandboxes_GameState_Line_descriptor =
       internal_static_org_example_dotsandboxes_GameState_descriptor.getNestedTypes().get(0);
     internal_static_org_example_dotsandboxes_GameState_Line_fieldAccessorTable = new

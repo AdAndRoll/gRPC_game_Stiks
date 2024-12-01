@@ -53,12 +53,12 @@ public class GameClientWithGUI extends JPanel {
 
             // Обновляем состояния квадратов
             for (Dotsandboxes.GameState.Square square : gameState.getSquaresList()) {
-                int row = square.getRow();  // Получаем строку квадрата
-                int col = square.getCol();  // Получаем колонку квадрата
-                String mark = square.getMark(); // Получаем метку (X или O)
+                int row = square.getRow();
+                int col = square.getCol();
+                String mark = square.getMark();
 
                 // Обновляем символ в соответствующем квадрате
-                squares[row][col] = mark.isEmpty() ? ' ' : mark.charAt(0);  // Если метки нет, ставим пробел
+                squares[row][col] = mark.isEmpty() ? ' ' : mark.charAt(0);
             }
 
             // Обновляем состояния линий
@@ -66,15 +66,28 @@ public class GameClientWithGUI extends JPanel {
                 int row = line.getRow();
                 int col = line.getCol();
                 if (line.getDirection() == Dotsandboxes.GameState.Direction.HORIZONTAL) {
-                    horizontal[row][col] = true;  // Горизонтальная линия
+                    horizontal[row][col] = true;
                 } else {
-                    vertical[row][col] = true;  // Вертикальная линия
+                    vertical[row][col] = true;
+                }
+            }
+
+            // Проверяем победителя только если игра завершена
+            String winner = gameState.getWinner();
+            if (!winner.isEmpty() && !gameFinished) {
+                gameFinished = true;
+                if (winner.equals("Draw")) {
+                    JOptionPane.showMessageDialog(this, "The game is a draw!");
+                } else {
+                    JOptionPane.showMessageDialog(this, winner + " wins!");
                 }
             }
 
             repaint();  // Перерисовываем панель
         });
     }
+
+
 
 
     private void handleMouseClick(int x, int y) {
